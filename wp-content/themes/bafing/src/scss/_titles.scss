@@ -1,0 +1,46 @@
+.title {
+	margin-bottom: 30px;
+	h2,h3,h4 {
+		font-family: 'nexa_bold';
+		font-size: 40px;
+		line-height: 50px;
+		color: $azul;
+		&:after {
+			content: '.';
+			color: $orange;
+		}
+	}
+	&--white {
+		h2,h3,h4 {
+			color: white;
+		}
+	}
+	&--red {
+		h2,h3,h4 {
+			&:after {
+				color: $red;
+			}
+		}
+	}
+	&--little {
+		h2,h3,h4 {
+			font-size: 18px;
+			line-height: 22px;
+		}
+	}
+	&--nopoint {
+		h2,h3,h4 {
+			&:after {
+				display: none;
+			}
+		}
+	}
+	&--after--skyblue {
+		h2,h3,h4 {
+			&:after {
+				color: $skyblue;
+			}
+		}
+	}
+}
+

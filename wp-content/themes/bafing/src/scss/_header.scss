@@ -1,0 +1,75 @@
+@import "utilities";
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 10;
+	transition: 0.3s;
+	.nav {
+		display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+		&__left {
+			a {
+			    width: 150px;
+			    overflow: hidden;
+			    flex: none;
+			    display: block;
+			    height: 90px;
+				svg {
+					width: 350px;
+    				height: auto;
+					path {
+						fill: white;
+					}
+				}
+			}
+		}
+		&__right {
+			display: flex;
+	    	align-items: center;
+			ul {
+				display: flex;
+				li {
+					a {
+						display: block;
+						color: white;
+						padding: 0px 10px;
+    					font-size: 18px;
+					}
+				}
+			}
+		}
+		&__menu {
+			margin-right: 15px;
+		}
+		&__pedido {
+
+		}
+	}
+	&.active {
+		background: white;
+		box-shadow: 0px 3px 4px rgba(76, 76, 76, 0.23);
+		.nav {
+			&__left {
+				a {
+					svg {
+						path {
+							fill: #05408b;
+						}
+					}
+				}
+			}
+			&__right {
+				ul {
+					li {
+						a {
+							color: $azul;
+						}
+					}
+				}
+			}
+		}
+	}
+}

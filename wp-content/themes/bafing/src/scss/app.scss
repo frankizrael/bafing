@@ -1,0 +1,75 @@
+/* Imports */
+@import "fonts";
+@import "variables";
+@import "main";
+@import "buttons";
+@import "titles";
+@import "content";
+@import "navigation";
+@import "form";
+body {
+	color: $black;
+	font-family: 'nexa_light';
+	margin: 0px;
+	background: #f8f8f8;
+}
+h1,h2,h3,h4 { font-family: 'nexa_bold'; }
+h1,h2,h3,h4,p,menu,main,section {margin:0px; }
+a {text-decoration:none;&:hover {text-decoration: none;}}
+ul { padding: 0px;margin: 0px;list-style: none;}
+input {outline:none;}
+.fullheight {
+	height: 100vh;
+	@include maxw(table_min) {
+		min-height: 600px;
+	}
+}
+.x-padd-container {
+    padding: 0px 50px;
+}
+.box {
+    padding: 20px 35px;
+    box-shadow: 0 2px 45px 0 rgba(0,0,0,0.10);
+}
+.onlyMobile {
+	display: none;
+	@include maxw(table_min) {
+		display: block;
+	}
+}
+.x-container {
+	margin: auto;
+	max-width: calc(100% - 600px);
+	@include maxw(mylaptop) {
+		max-width: calc(100% - 200px);
+	}
+	@include maxw(laptop) {
+		max-width: calc(100% - 200px);
+	}
+	@include maxw(tablet_p) {
+		max-width: calc(100% - 100px);
+	}
+	@include maxw(table_max) {
+		max-width: calc(100% - 40px);
+	}
+	@include maxw(table_min) {
+		max-width: calc(100% - 40px);
+	}
+	@include maxw(mobile) {
+		max-width: calc(100% - 40px);
+	}
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: $black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-track {
+    background: white;
+}
+::-webkit-scrollbar {
+    width: 9px;
+    height: 5px;
+}
