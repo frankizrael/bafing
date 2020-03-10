@@ -8,7 +8,8 @@ module.exports = function(env) {
             main: "./src/app.js",
             page: "./src/entries/page.js",
             home: "./src/entries/home.js",
-            index: "./src/entries/index.js"
+            index: "./src/entries/index.js",
+            nosotros: "./src/entries/nosotros.js"
         },
         target: "web",
         mode: env.NODE_ENV,

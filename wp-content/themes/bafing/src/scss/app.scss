@@ -59,6 +59,35 @@ input {outline:none;}
 		max-width: calc(100% - 40px);
 	}
 }
+.left-container {
+	margin-left: 300px;
+	max-width: calc(100% - 300px);
+	@include maxw(mylaptop) {
+		margin-left: 100px;
+		max-width: calc(100% - 100px);
+	}
+	@include maxw(laptop) {
+		margin-left: 100px;
+		max-width: calc(100% - 200px);
+	}
+	@include maxw(tablet_p) {
+		margin-left: 50px;
+		max-width: calc(100% - 100px);
+	}
+	@include maxw(table_max) {
+		margin-left: 20px;
+		max-width: calc(100% - 40px);
+	}
+	@include maxw(table_min) {
+		margin-left: 20px;
+		max-width: calc(100% - 40px);
+	}
+	@include maxw(mobile) {
+		margin-left: 20px;
+		max-width: calc(100% - 40px);
+	}
+}
+
 
 
 ::-webkit-scrollbar-thumb {

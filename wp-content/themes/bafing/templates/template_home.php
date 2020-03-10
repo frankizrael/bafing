@@ -66,6 +66,103 @@ get_header();
 		</div>
 	</div>
 </section>
+<section class="clientes">
+	<div class="x-container">
+		<div class="title">
+			<h2>Nuestros clientes</h2>
+		</div>
+		<div class="content_clientes">
+			<ul>
+				<?php
+					$clientes = get_field('clientes');
+					foreach ($clientes as $cli) {
+						?>
+				<li>
+					<img src="<?php echo $cli['imagen']; ?>">
+				</li>
+						<?php
+					}
+				?>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="banner-in">
+	<div class="banner-in__background" style="background-image: url('<?php the_field('banner_imagen'); ?>');">
+		<div class="banner_title">
+			<h2><?php the_field('banner_title'); ?></h2>
+			<p><?php the_field('banner_content'); ?></p>
+			<a href="#" class="btn">Deseo saber más</a>
+		</div>
+	</div>
+</section>
+<section class="testimonios">
+	<div class="left-container box">
+		<div class="title">
+			<h2>Historias de éxito</h2>
+		</div>
+		<div class="content_testimonios">
+			<article class="swiper-projects " id="testimonios_slider">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<?php
+							$historias = get_field('historias');
+							foreach ($historias as $hi) {
+								?>
+						<div class="swiper-slide">
+							<div class="item_historia">
+								<div class="img">
+									<img src="<?php echo $hi['imagen']; ?>">
+								</div>
+								<div class="text">
+									<h3><?php echo $hi['title']; ?></h3>
+									<div class="content">
+										<?php echo $hi['content']; ?>
+									</div>
+									<div class="autor">
+										<?php echo $hi['autor']; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+								<?php
+							}
+						?>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+<section class="noticias">
+	<div class="x-container">
+		<div class="title">
+			<h2>Últimas noticias</h2>
+			<a href="#" class="btn">Ver más noticias</a>
+		</div>
+		<div class="blogsContent">
+			<?php
+				$blog = get_field('blog');
+				foreach ($blog as $b) {
+					?>
+					<div class="blogsContentItem" style="background-image: url('<?php echo get_the_post_thumbnail_url($b['id']); ?>');">
+						<a href="<?php the_permalink($b['id']); ?>">
+							<div class="title-top">
+								<?php the_field('date',$b['id']); ?>
+							</div>
+							<div class="title-bot">
+								<h3><?php echo get_the_title($b['id']); ?></h3>
+								<span>Leer más</span>
+							</div>
+						</a>
+					</div>
+					<?php
+				}
+			?>
+		</div>
+	</div>
+</section>
 <?php
 get_footer();
 ?>

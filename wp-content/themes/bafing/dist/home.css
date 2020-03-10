@@ -64,8 +64,8 @@
           border-bottom: solid 2px #f7d52e;
           padding: 25px 0px; }
           .soluciones .box .soluciones_box .flex .left .content p {
-            font-size: 22px;
-            line-height: 31px;
+            font-size: 25px;
+            line-height: 33px;
             color: #3374ac; }
       .soluciones .box .soluciones_box .flex .right {
         width: calc(75% - 20px);
@@ -75,24 +75,27 @@
           flex-wrap: wrap;
           justify-content: space-between; }
           .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item {
-            width: calc(33.3% - 10px);
+            width: calc(33.3% - 20px);
             flex: none;
             box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.19);
-            margin-bottom: 20px; }
+            margin-bottom: 30px; }
             .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .imagen_s img {
               display: block; }
             .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .content_s {
-              padding: 10px 5px; }
+              padding: 20px 15px;
+              position: relative;
+              top: -45px;
+              padding-bottom: 0px;
+              margin-bottom: -20px; }
               .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .content_s h3 {
                 font-size: 16px;
-                margin-bottom: 10px;
-                color: #3374ac; }
+                margin-bottom: 20px;
+                color: white; }
               .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .content_s .contet p {
-                font-size: 14px;
-                line-height: 18px; }
+                font-size: 15px;
+                line-height: 22px; }
               .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .content_s .link .btn {
                 padding: 5px 15px;
-                display: block;
                 margin-top: 10px; }
             .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .heightFull {
               height: 100%; }
@@ -103,12 +106,153 @@
                 align-items: center;
                 text-align: center;
                 justify-content: space-around;
-                font-size: 28px;
+                font-size: 22px;
                 color: #3374ac;
                 font-weight: 700; }
     .soluciones .box .soluciones_box img {
       max-width: 100%;
       flex: none; }
+
+.content_clientes ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+  .content_clientes ul li {
+    width: calc(16.66% - 10px);
+    border: solid 1px #e6e6e6cf;
+    height: 119px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px; }
+    .content_clientes ul li img {
+      width: 100%;
+      filter: grayscale(1);
+      transition: 0.3s; }
+    .content_clientes ul li:hover img {
+      filter: grayscale(0); }
+
+.banner-in__background {
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  padding: 80px 0px;
+  text-align: center;
+  color: white;
+  background-position: center;
+  margin-top: 80px;
+  z-index: 2; }
+  .banner-in__background:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background: black;
+    opacity: 0.5;
+    left: 0px;
+    z-index: -1; }
+
+.banner-in .banner_title {
+  color: white;
+  max-width: 600px;
+  margin: auto; }
+  .banner-in .banner_title h2 {
+    margin-bottom: 10px;
+    font-size: 30px; }
+  .banner-in .banner_title p {
+    font-size: 22px; }
+  .banner-in .banner_title a {
+    margin-top: 25px; }
+
+.testimonios {
+  margin: 80px 0px; }
+  .testimonios .swiper-slide {
+    width: calc(33.33% - 40px); }
+  .testimonios .item_historia {
+    border: solid 1px #cecece;
+    margin: 0px 20px;
+    padding: 20px;
+    position: relative;
+    margin-top: 55px;
+    min-height: 420px;
+    box-shadow: 0px 8px 10px rgba(60, 60, 60, 0.17);
+    margin-bottom: 50px; }
+    .testimonios .item_historia .img {
+      border: solid 1px #cecece;
+      background: white;
+      width: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: absolute;
+      top: -53px;
+      left: -20px; }
+      .testimonios .item_historia .img img {
+        width: 100%;
+        display: block;
+        height: 100%;
+        object-fit: cover; }
+    .testimonios .item_historia .text h3 {
+      padding-left: 95px;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #3374ac;
+      min-height: 46px; }
+    .testimonios .item_historia .text .content p {
+      font-size: 14px;
+      line-height: 22px; }
+    .testimonios .item_historia .text .autor {
+      margin-top: 20px;
+      font-weight: 700;
+      color: #3374ac; }
+
+.noticias {
+  margin-bottom: 80px; }
+  .noticias .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .noticias .blogsContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .noticias .blogsContent .blogsContentItem {
+      width: calc(33.33% - 20px);
+      position: relative;
+      height: 450px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0px 9px 15px rgba(109, 109, 109, 0.76);
+      z-index: 2; }
+      .noticias .blogsContent .blogsContentItem:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: black;
+        z-index: -1;
+        opacity: 0.2; }
+      .noticias .blogsContent .blogsContentItem a {
+        display: block;
+        height: 100%; }
+        .noticias .blogsContent .blogsContentItem a .title-top {
+          position: absolute;
+          color: white;
+          left: 20px;
+          top: 20px;
+          font-size: 16px; }
+        .noticias .blogsContent .blogsContentItem a .title-bot {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          width: calc(100% - 40px);
+          color: white; }
+          .noticias .blogsContent .blogsContentItem a .title-bot span {
+            display: inline-block;
+            margin-top: 20px;
+            border-bottom: solid 2px white; }
 /**
  * Swiper 4.5.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
