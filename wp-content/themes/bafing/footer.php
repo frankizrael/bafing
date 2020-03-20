@@ -5,7 +5,7 @@
 				<div class="left">
 					<?php
 						wp_nav_menu( array(
-						    'menu' => 'Header Menu'
+						    'menu' => 'Footer Menu'
 						) );
 					?>
 				</div>

@@ -36,7 +36,7 @@ get_header();
 								<div class="soluciones_item soluciones-<?php echo sanitize_title($ss['title']); ?>">
 									<div class="imagen_s">
 										<img src="<?php echo $ss['imagen']; ?>">
-										<span></span>
+										<span><img src="<?php echo $ss['icon']; ?>"></span>
 									</div>
 									<div class="content_s">
 										<h3><?php echo $ss['title']; ?></h3>

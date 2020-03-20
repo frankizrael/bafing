@@ -170,7 +170,7 @@
 				<div class="nav__menu">
 					<?php
 						wp_nav_menu( array(
-						    'menu' => 'Header Menu'
+						    'menu' => 'header-menu'
 						) );
 					?>
 				</div>

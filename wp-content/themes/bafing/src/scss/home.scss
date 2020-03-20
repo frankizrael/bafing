@@ -93,9 +93,28 @@
 	    					box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.19);
 	    					margin-bottom: 30px;
 	    					.imagen_s {
+	    						position: relative;
 	    						img {
 	    							display: block;
 	    						}
+	    						span {
+								    position: absolute;
+								    width: 60px;
+								    height: 60px;
+								    top: 5px;
+								    background: white;
+								    border-radius: 50%;
+								    line-height: 65px;
+								    text-align: center;
+								    border: solid 1px #f7d52e;
+								    right: 7px;
+								    img {
+								    	width: 40px;
+									    margin: auto;
+									    position: relative;
+									    top: 11px;
+								    }
+								}
 	    					}
 	    					.content_s {
 							    padding: 20px 15px;

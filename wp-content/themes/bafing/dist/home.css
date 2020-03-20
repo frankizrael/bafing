@@ -79,8 +79,26 @@
             flex: none;
             box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.19);
             margin-bottom: 30px; }
-            .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .imagen_s img {
-              display: block; }
+            .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .imagen_s {
+              position: relative; }
+              .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .imagen_s img {
+                display: block; }
+              .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .imagen_s span {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                top: 5px;
+                background: white;
+                border-radius: 50%;
+                line-height: 65px;
+                text-align: center;
+                border: solid 1px #f7d52e;
+                right: 7px; }
+                .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .imagen_s span img {
+                  width: 40px;
+                  margin: auto;
+                  position: relative;
+                  top: 11px; }
             .soluciones .box .soluciones_box .flex .right .flex-soluciones .soluciones_item .content_s {
               padding: 20px 15px;
               position: relative;

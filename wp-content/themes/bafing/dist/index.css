@@ -1,0 +1,74 @@
+.banner {
+  position: relative;
+  z-index: 1; }
+  .banner .titlePrincipal {
+    display: flex;
+    align-items: center;
+    height: 450px; }
+    .banner .titlePrincipal .title {
+      margin-bottom: 0px; }
+      .banner .titlePrincipal .title h1 {
+        font-size: 60px;
+        color: white; }
+
+.index-section {
+  position: relative;
+  z-index: 2;
+  top: -115px;
+  margin-bottom: -60px; }
+  .index-section .box {
+    background: white; }
+    .index-section .box h3 {
+      color: #3374ac;
+      font-size: 24px;
+      line-height: 24px; }
+    .index-section .box .flex {
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 15px; }
+      .index-section .box .flex li {
+        margin-right: 10px; }
+        .index-section .box .flex li a {
+          border: solid 1px #3374ac;
+          color: #3374ac;
+          padding: 10px;
+          border-radius: 35px;
+          min-width: 100px;
+          display: block;
+          text-align: center; }
+    .index-section .box .noticias__right__content__swiper {
+      display: flex;
+      justify-content: space-beetwen; }
+      .index-section .box .noticias__right__content__swiper .noticias__item {
+        width: calc(33.33% - 10px);
+        border: solid 1px #9a9a9a52; }
+        .index-section .box .noticias__right__content__swiper .noticias__item__img {
+          position: relative; }
+          .index-section .box .noticias__right__content__swiper .noticias__item__img img {
+            width: 100%;
+            display: block;
+            height: 250px;
+            object-fit: cover; }
+        .index-section .box .noticias__right__content__swiper .noticias__item__date {
+          position: absolute;
+          color: white;
+          top: 0px;
+          right: 5px; }
+          .index-section .box .noticias__right__content__swiper .noticias__item__date svg {
+            margin-right: 5px; }
+            .index-section .box .noticias__right__content__swiper .noticias__item__date svg path {
+              fill: white; }
+        .index-section .box .noticias__right__content__swiper .noticias__item__content {
+          padding: 20px; }
+          .index-section .box .noticias__right__content__swiper .noticias__item__content .tag {
+            margin-bottom: 5px; }
+            .index-section .box .noticias__right__content__swiper .noticias__item__content .tag a {
+              color: #3374ac;
+              font-size: 16px;
+              background: #f7d52e;
+              font-weight: 700;
+              padding: 10px;
+              border-radius: 50px;
+              min-width: 100px;
+              display: inline-block;
+              text-align: center; }

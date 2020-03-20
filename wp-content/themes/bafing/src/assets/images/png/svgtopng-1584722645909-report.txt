@@ -1,0 +1,5 @@
+We've experienced some issues while converting your files:
+
+Recurso 2_icon_.svg converting error:
+null:-1
+The attribute "r" of the element <circle> is required
