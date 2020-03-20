@@ -77,6 +77,12 @@
 		    		.tag {
 					    margin-bottom: 5px;
 					    a {
+					    	font-size: 12px;
+					    	color: $azul;
+					    }
+					}
+					.linkContent {
+						a {
 						    color: #3374ac;
 						    font-size: 16px;
 						    background: #f7d52e;
@@ -88,7 +94,6 @@
 						    text-align: center;
 						}
 					}
-
 		    	}
 		    }
 		}
