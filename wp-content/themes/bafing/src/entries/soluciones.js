@@ -5,14 +5,6 @@ import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugin
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
 $('.fixedMenu a').eq(0).addClass('active');
-$('.accordeon__header').on('click',function(){
-	let $this = $(this);
-	$('.accordeon__body').removeClass('active');
-	$('.accordeon__header').removeClass('active');
-	$this.addClass('active');
-	$this.closest('.accordeon__item').find('.accordeon__body').addClass('active');
-});
-$('.accordeon__header').eq(0).trigger('click');
 
 $('.fixedMenu a').on('click',function(){
 	let $this = $(this);
@@ -46,8 +38,15 @@ triggerElement: "#clientes"
 .setClassToggle('.fixedMenu', 'link_4')
 .addTo(controller);
 
+let scene_partners = new ScrollMagic.Scene({
+triggerElement: "#partners"
+})
+.setClassToggle('.fixedMenu', 'link_5')
+.addTo(controller);
+
+
 let scene_5 = new ScrollMagic.Scene({
 triggerElement: "#noticias"
 })
-.setClassToggle('.fixedMenu', 'link_5')
+.setClassToggle('.fixedMenu', 'link_6')
 .addTo(controller);

@@ -37,6 +37,31 @@ input {outline:none;}
 		display: block;
 	}
 }
+.swiper-pagination {
+    position: relative;
+    bottom: 0px !important;
+    transform: none;
+	margin-top: 30px;
+	.swiper-pagination-bullet {
+		width: 12px;
+		height: 12px;
+		background: transparent;
+		border: solid 2px $orange;
+		position: relative;
+		&.swiper-pagination-bullet-active {
+			&:before {
+				content: '';
+				position: absolute;
+				width: 8px;
+				height: 8px;
+				background: $orange;
+				border-radius: 50%;
+				left: 2px;
+				top: 2px;
+			}
+		}
+	}
+}
 .x-container {
 	margin: auto;
 	max-width: calc(100% - 600px);
@@ -87,7 +112,39 @@ input {outline:none;}
 		max-width: calc(100% - 40px);
 	}
 }
-
+.anchor {
+	background-image: url('../assets/curvita.png');
+	position: absolute;
+    width: 250px;
+    background-size: cover;
+    height: 52px;
+    z-index: 7;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    a {
+	    display: block;
+	    text-align: center;
+	    height: 52px;
+	    line-height: 68px;
+	    svg {
+	    	width: 20px;
+	    	height: 16.5px;
+	    }
+	}
+	&--white {
+		background-image: url('../assets/curva_blanca.svg');
+		a {
+			svg {
+				path {
+					&.svg_fc {
+						fill: $azul;
+					}
+				}
+			}
+		}
+	}
+}
 
 
 ::-webkit-scrollbar-thumb {

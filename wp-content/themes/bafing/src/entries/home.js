@@ -6,6 +6,20 @@ import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
+let pos = 0;
+$(window).scroll(function(){
+	let mytop = $(window).scrollTop();	
+	if (mytop > 20){
+		if (pos == 0) {
+			$('html, body').stop().animate({scrollTop: $('#soluciones').offset().top - 130}, 800);
+			pos = 1;
+		}		
+	} else {
+		//
+	}
+});
+
+
 var mySwiperInit = new Swiper('#testimonios_slider .swiper-container', {
     speed: 400,
     pagination: {
@@ -15,4 +29,15 @@ var mySwiperInit = new Swiper('#testimonios_slider .swiper-container', {
     loop: true,
     autoplay: 2500,
     slidesPerView: 'auto'
+});
+
+var mySwiperInit = new Swiper('.init .swiper-container', {
+    speed: 400,
+    pagination: {
+        el: '.init .swiper-pagination',
+        clickable: true
+    },
+    loop: true,
+    autoplay: 2500,
+    slidesPerView: 1
 });

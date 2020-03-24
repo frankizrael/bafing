@@ -39,12 +39,24 @@ get_header();
 		<div class="flex">
 			<div class="left">
 				<div class="content">
-					<?php the_field('mision'); ?>
+					<img src="<?php the_field('img_vision'); ?>">
 				</div>
 			</div>
 			<div class="right">
 				<div class="content">
 					<?php the_field('vision'); ?>
+				</div>
+			</div>
+		</div>
+		<div class="flex">
+			<div class="left">
+				<div class="content">
+					<img src="<?php the_field('img_mision'); ?>">
+				</div>
+			</div>
+			<div class="right">
+				<div class="content">
+					<?php the_field('mision'); ?>
 				</div>
 			</div>
 		</div>
@@ -103,6 +115,7 @@ get_header();
 							?>
 						<li>
 							<img src="<?php echo $con['imagen']; ?>">
+							<span><?php echo $con['text']; ?></span>
 						</li>
 							<?php
 						}
@@ -122,6 +135,7 @@ get_header();
 							?>
 						<li>
 							<img src="<?php echo $ce['imagen']; ?>">
+							<span><?php echo $ce['text']; ?></span>
 						</li>
 							<?php
 						}

@@ -25,6 +25,9 @@ get_header();
 					<a href="#clientes">Clientes</a>
 				</li>
 				<li>
+					<a href="#partners">Partners</a>
+				</li>				
+				<li>
 					<a href="#noticias">Noticias</a>
 				</li>
 			</ul>
@@ -64,7 +67,7 @@ get_header();
 					</div>
 					<div class="right">
 						<div class="accordeon_right">
-							<div class="accordeon box">
+							<div class="accordeon">
 								<?php
 									$accordeon = get_field('accordeon');
 									foreach ($accordeon as $ac) {
@@ -132,6 +135,40 @@ get_header();
 						?>
 				<li>
 					<img src="<?php echo $cli['imagen']; ?>">
+				</li>
+						<?php
+					}
+				?>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="partners" id="partners">
+	<div class="menu-container box">
+		<div class="title">
+			<h2>Nuestros Partners</h2>
+		</div>
+		<div class="content_partners">
+			<ul>
+				<?php
+					$partners = get_field('partners');
+					foreach ($partners as $pa) {
+						?>
+				<li>
+					<div class="contentf">
+						<div class="left">
+							<?php echo $pa['nivel']; ?>
+						</div>
+						<div class="right">
+							<?php
+								foreach ($pa['partner'] as $pr) {
+									?>
+							<img src="<?php echo $pr['imagen']; ?>">
+									<?php
+								}
+							?>
+						</div>
+					</div>
 				</li>
 						<?php
 					}

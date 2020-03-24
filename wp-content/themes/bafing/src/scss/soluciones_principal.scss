@@ -1,0 +1,214 @@
+@import "variables";
+@import "utilities";
+.NavChild {
+	width: 100%;
+    top: 105px;
+    background: #eaeaea;
+    padding: 3px 0px;
+    z-index: 6;
+    transition: 0.3s;
+    position: fixed;
+    .flex {
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    }
+    &__item {
+    	a {
+    		display: flex;
+    		align-items: center;
+    		opacity: 0.5;
+    		padding: 5px 10px;
+		    margin: 10px 0px;
+		    border-left: solid 1px #bdbdbd54;
+		    border-right: solid 1px #bdbdbd54;
+    		i {
+    			svg {
+    				width: auto;
+    				height: 35px;
+    				path {
+    					fill: white;
+    				}
+    			}
+    		}
+    		img {
+			    width: 30px;
+			}
+    		span {
+    			cursor: pointer;
+    			color : $azul;
+    			margin-left: 5px;
+    			font-weight: 700;
+    		}
+    	}
+    	&:nth-child(1) {
+    		a {
+    			opacity: 1;
+    			&:after {
+    				content: '.';
+    				font-weight: 700;
+    				margin-left: 3px;
+    				color: $azul;
+    			}
+    		}
+    	}
+    }
+}
+.section {
+	.banner {
+		position: relative;
+		z-index: 1;
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: black;
+			opacity: 0.3;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: -1;
+		}
+		&__title {
+			bottom: 100px;
+			color: white;
+			max-width: 540px;
+			position: absolute;
+    		top: 350px;
+			h2 {
+				font-size: 60px;
+				line-height: 60px;
+				margin-bottom: 35px;
+				&:after {
+					content: '.';
+					color: $orange;
+				}
+			}
+			p {
+				font-size: 20px;
+				line-height: 26px;
+				margin-bottom: 10px;
+			}
+		}
+		&__social {
+			position: absolute;
+		    bottom: 100px;
+		    color: white;
+		    right: 0px;
+		    display: flex;
+		    ul {
+		    	display: flex;
+		    	align-items: center;
+		    	position: relative;
+		    	top: -3px;
+		    	li {
+		    		a {
+		    			display: block;
+		    			svg {
+		    				path {
+		    					fill: white;
+		    				}
+		    			}
+		    		}
+		    	}
+		    }
+		}
+		.anchor {
+			bottom: 0px;
+			svg {
+				path {
+					fill: $azul;
+					&.svg_fb {
+						fill: white;
+					}
+				}
+			}
+		}
+	}
+	.detail {
+		margin: 50px 0px;
+		.flex {
+			display: flex;
+		    justify-content: space-between;
+		    color: $azul;
+		    padding: 10px 0px;
+		    .left {
+		    	width: calc(40% - 20px);
+			    flex: none;
+			    .contenido_left {
+				    border-top: solid 2px $orange;
+				    border-bottom: solid 2px $orange;
+				    padding: 25px 0px;
+				    font-size: 20px;
+				    line-height: 26px;
+				}
+		    }
+		    .right {
+		    	width: calc(60% - 20px);
+			    flex: none;
+			    .accordeon_right {
+			    	.accordeon {
+			    		&__header {
+			    			display: flex;
+						    align-items: center;
+						    border-bottom: solid 1px #90909061;
+						    padding: 10px 0px;
+						    position: relative;
+						    cursor: pointer;
+			    			&:before {
+							    content: '';
+							    position: absolute;
+							    width: 10px;
+							    height: 10px;
+							    border-bottom: solid 2px #f7d52e;
+							    border-right: solid 2px #f7d52e;
+							    transform: rotate(45deg);
+							    right: 0px;
+							    transition: 0.3s;
+							}
+							img {
+							    width: 40px;
+							    height: 40px;
+							    margin-right: 8px;
+							}
+							h3 {
+							    font-size: 20px;
+							}
+							&.active {
+								&:before {
+									transform: rotate(225deg);
+    								top: 27px;
+								}
+							}
+			    		}
+			    		&__body {
+						    font-size: 14px;
+						    overflow: hidden;
+						    max-height: 0px;
+						    transition: 0.3s;
+						    &.active {
+						    	max-height: 1000px;
+						    }
+						    .left, .right {
+						    	width: calc(50% - 10px);
+						    }
+						    h3 {
+							    font-size: 16px;
+							}
+							li {
+								color: $black;
+								&:before {
+									content: '.';
+								    font-size: 18px;
+								    font-weight: 700;
+								    color: $azul;
+								    margin-right: 5px;
+								}
+							}
+						}
+			    	}
+			    }
+		    }
+		}
+	}
+}

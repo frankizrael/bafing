@@ -16,14 +16,19 @@ get_header(); ?>
 	<div class="x-container ">
 		<div class="box">
 			<div class="tags-title ">
-				<h3>Entérate lo último en:</h3>
+				<div class="ssh3">
+					<h3>Entérate lo último en: </h3>
+					<div class="ss">
+						<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+					</div>
+				</div>
 				<ul class="flex">
 					<li><a href="<?php echo site_url(); ?>/noticias" class="active">Todos</a></li>
 				    <?php wp_list_categories( array(
 				    	'title_li' => '',
 				        'orderby' => 'name'
 				    ) ); ?> 
-				</ul>
+				</ul>				
 			</div>
 			<div class="noticias posRelative">
 				<div class="noticias__content">

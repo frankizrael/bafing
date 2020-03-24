@@ -23,7 +23,7 @@ import TweenLite from "gsap/TweenLite";
       	event.preventDefault();
       	let $this = $(this);
       	let href = $this.attr('href');
-      	$('html, body').stop().animate({scrollTop: $(href).offset().top - 73}, 800);
+      	$('html, body').stop().animate({scrollTop: $(href).offset().top - 130}, 800);
  	});
 	
 //buttons
