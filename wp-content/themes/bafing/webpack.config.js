@@ -11,7 +11,8 @@ module.exports = function(env) {
             index: "./src/entries/index.js",
             nosotros: "./src/entries/nosotros.js",
             soluciones: "./src/entries/soluciones.js",
-            soluciones_principal: "./src/entries/soluciones_principal.js"
+            soluciones_principal: "./src/entries/soluciones_principal.js",            
+            contact: "./src/entries/contacto.js"
         },
         target: "web",
         mode: env.NODE_ENV,

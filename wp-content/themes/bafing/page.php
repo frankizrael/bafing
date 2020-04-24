@@ -16,6 +16,9 @@ get_header();
 			<?php 
 				if(get_field('is_partner')) { 
 					?>
+				<div class="allowContent">
+					<?php the_content(); ?>
+				</div>
 				<div class="partertLemento">
 					<?php
 						$parnters = get_field('partner');

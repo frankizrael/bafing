@@ -26,10 +26,32 @@ import TweenLite from "gsap/TweenLite";
       	$('html, body').stop().animate({scrollTop: $(href).offset().top - 130}, 800);
  	});
 	
-//buttons
-	
+//header animation
+	let $slider = $('.slider-i');
+	let len = $slider.length;
+	let t = 1;
+	let ciclo = setInterval( function() {
+		if (t < len) {
+			let num = 90*parseInt(t);
+			let cruw = '-'+num+'px';
+			$slider.eq(0).css('margin-top',cruw);
+			t++;
+		} else {
+			t=0;			
+		}		        
+    }, 2000);    	
 //forms input
+	$('.modalRight').on('click',function(){
+		$('body').addClass('modalactive');
+	});
+	$('.closeModal').on('click',function(){
+		$('body').removeClass('modalactive');
+	});
+	$('.fixModal .back').on('click',function(){
+		$('body').removeClass('modalactive');
+	});
 	
+
 //preload animation
 	
 

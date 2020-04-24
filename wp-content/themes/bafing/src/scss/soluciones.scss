@@ -4,7 +4,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 550px;
+    height: 600px;
     position: relative;
     &:before {
 	    content: '';
@@ -18,7 +18,7 @@
 	.titlePrincipal {
 	    display: block;
 	    position: relative;
-	    top: 150px;
+	    top: 190px;
 	    h1 {
 		    color: white;
 		    font-size: 60px;
@@ -38,9 +38,7 @@
 		    height: 100px;
 		    left: 0px;
 		    top: 50%;
-		    margin-top: -50px;
-		    border-right: solid 1px #ffffff70;
-		    padding-right: 5px;
+		    margin-top: -42px;
 		}
 	}
 }
@@ -48,17 +46,53 @@
     max-width: calc(100% - 550px);
     margin-left: 550px;
     padding-right: 300px;
+    @include maxw(mypc) {
+		max-width: calc(100% - 550px);
+	    margin-left: 550px;
+	    padding-right: 150px;
+	}
+	@include maxw(mylaptop) {
+		max-width: calc(100% - 450px);
+	    margin-left: 450px;
+	    padding-right: 100px;
+	}
+	@include maxw(laptop) {
+		max-width: calc(100% - 350px);
+	    margin-left: 350px;
+	    padding-right: 100px;
+	}
 }
 .menu-container-full {
 	max-width: calc(100% - 550px);
     margin-left: 550px;
+    @include maxw(mypc) {
+		max-width: calc(100% - 550px);
+	    margin-left: 550px;
+	}
+	@include maxw(mylaptop) {
+		max-width: calc(100% - 450px);
+	    margin-left: 450px;
+	}
+	@include maxw(laptop) {
+		max-width: calc(100% - 350px);
+	    margin-left: 350px;
+	}
     .right-container {
-    	padding-right: 300px;    	
+    	padding-right: 300px;
+    	@include maxw(mypc) {
+		    padding-right: 150px;
+		}
+		@include maxw(mylaptop) {
+		    padding-right: 100px;
+		}
+		@include maxw(laptop) {
+		    padding-right: 100px;
+		}  	
     }
 }
 .fixedMenu {
     position: fixed;
-    top: 320px;
+    top: 350px;
     z-index: 15;
     a {
 	    display: block;
@@ -374,8 +408,6 @@
 		.listColums {
 		    color: white;
 		    ul {
-			    columns: 3;
-			    column-gap: 40px;
 			    li {
 				    margin-bottom: 20px;
 				    padding-left: 15px;
@@ -483,6 +515,9 @@
 		    background-position: center;
 		    box-shadow: 0px 9px 15px rgba(109, 109, 109, 0.76);
 		    z-index: 2;
+		    @include maxw(mypc) {
+				height: 350px;
+			}
 		    &:before {
 			    content: '';
 			    position: absolute;

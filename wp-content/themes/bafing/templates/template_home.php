@@ -131,12 +131,12 @@ get_header();
 							foreach ($historias as $hi) {
 								?>
 						<div class="swiper-slide">
-							<div class="item_historia">
-								<div class="img">
-									<img src="<?php echo $hi['imagen']; ?>">
-								</div>
+							<div class="item_historia">								
 								<div class="text">
-									<h3><?php echo $hi['title']; ?></h3>
+									<div class="tit">
+										<img src="<?php echo $hi['imagen']; ?>">
+										<h3><?php echo $hi['title']; ?></h3>
+									</div>									
 									<div class="content">
 										<?php echo $hi['content']; ?>
 									</div>

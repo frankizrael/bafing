@@ -105,6 +105,26 @@ get_header();
 		<div class="box">
 			<div class="premios">
 				<div class="title">
+					<h2>Reconocimientos</h2>
+				</div>
+				<div class="contenido">
+					<ul>
+					<?php 
+						$certificaciones = get_field('certificaciones');
+						foreach ($certificaciones as $ce) {
+							?>
+						<li>
+							<img src="<?php echo $ce['imagen']; ?>">
+							<span><?php echo $ce['text']; ?></span>
+						</li>
+							<?php
+						}
+					?>
+					</ul>
+				</div>
+			</div>
+			<div class="certificaciones">
+				<div class="title">
 					<h2>Premios</h2>
 				</div>
 				<div class="contenido">
@@ -123,19 +143,19 @@ get_header();
 					</ul>
 				</div>
 			</div>
-			<div class="certificaciones">
+			<div class="partners">
 				<div class="title">
-					<h2>Certificaciones</h2>
+					<h2>Partners</h2>
 				</div>
 				<div class="contenido">
 					<ul>
 					<?php 
-						$certificaciones = get_field('certificaciones');
-						foreach ($certificaciones as $ce) {
+						$partners = get_field('partners');
+						foreach ($partners as $pp) {
 							?>
 						<li>
-							<img src="<?php echo $ce['imagen']; ?>">
-							<span><?php echo $ce['text']; ?></span>
+							<img src="<?php echo $pp['imagen']; ?>">
+							<span><?php echo $pp['text']; ?></span>
 						</li>
 							<?php
 						}

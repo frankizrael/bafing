@@ -3,6 +3,8 @@
 .banner {
 	position: relative;
 	z-index: 1;
+	background-size: cover;
+    background-position: center;
 	.titlePrincipal {
 		display: flex;
 		align-items: center;
@@ -16,27 +18,116 @@
 		}
 	}
 }
+.single {
+	.banner {
+		margin-top: 121px;
+		.titlePrincipal {
+			height: 350px;
+			position: relative;
+			h1 {
+				font-size: 55px;
+			}
+		}				
+		.social {
+		    position: absolute;
+		    bottom: 10px;
+		    display: flex;
+		    align-items: center;
+		    right: 0px;
+		    &:before {
+			    content: 'Compartir: ';
+			    color: white;
+			    margin-right: 10px;
+			}
+			a {
+				svg {
+				    width: 30px;
+				    height: 30px;
+				    display: block;
+				    path {
+					    fill: white;
+					}
+				}
+				&#whatsapp {
+					width: 30px;
+				    text-align: center;
+				    display: flex;
+				    justify-content: center;
+				    align-items: center;
+				    svg {
+					    width: 17px;
+					    height: 18px;
+					    margin: auto;
+					}
+				}
+			}
+		}		
+	}
+	.left_a {
+		.tag {
+			a {
+				background: $azul;
+			    font-weight: 700;
+			    padding: 5px 10px;
+			    border-radius: 5px;
+			    color: white;
+			}
+		}
+	}
+	.desct {
+	    position: relative;
+	    background: $azul;
+	    color: white;
+	    display: flex;
+	    align-items: center;
+	    padding: 5px;
+	    border-radius: 5px;
+	    text-transform: uppercase;
+	    font-weight: 700;
+	    font-size: 12px;
+	    i {
+		    margin-right: 5px;
+		    svg {
+			    width: 20px;
+			    height: 20px;
+			    display: block;
+			}
+		}
+		p {
+		    letter-spacing: 1px;
+		}
+	}
+	.justify-content-between {
+		justify-content: space-between;
+	}
+}
 .ssh3 .ss {
     margin-left: 25px;
 }
 .ssh3 {
     display: flex;
 }
-.tags .flex .date svg {
-    margin-right: 5px;
-    position: relative;
-    top: 2px;
+.comments {
+    margin-top: 20px;
 }
-.tags .flex .date {
-    display: flex;
-    margin-left: 15px;
-    opacity: 0.4;
-}
-.tags .flex {
-    display: flex;
-    border-bottom: solid 1px #dedede;
+.tags {
+	border-bottom: solid 1px #dedede;
     padding-bottom: 15px;
     margin-bottom: 15px;
+	.flex {
+ 		display: flex;
+    	align-items: center;
+    	.date {
+		    display: flex;
+		    margin-left: 15px;
+		    opacity: 0.4;
+		    svg {
+			    margin-right: 5px;
+			    position: relative;
+			    top: 2px;
+			}
+		}
+	}
 }
 .contenido h3 {
     color: #3374ac;
@@ -125,6 +216,73 @@
 						}
 					}
 		    	}
+		    	&.destacado {
+		    		background: $orange;
+    				border: solid 1px $orange;
+    				.link {
+    					background: $azul;
+    					color: white;
+    				}
+		    	}
+		    	.desct {
+				    position: absolute;
+				    top: 5px;
+				    background: $azul;
+				    color: white;
+				    display: flex;
+				    align-items: center;
+				    padding: 5px;
+				    border-radius: 5px;
+				    left: 5px;
+				    text-transform: uppercase;
+				    font-weight: 700;
+				    font-size: 12px;
+				    i {
+					    margin-right: 5px;
+					    svg {
+						    width: 20px;
+						    height: 20px;
+						    display: block;
+						}
+					}
+					p {
+					    letter-spacing: 1px;
+					}
+				}
+				.social {
+				    position: absolute;
+				    bottom: 10px;
+				    display: flex;
+				    align-items: center;
+				    right: 0px;
+				    &:before {
+					    content: 'Compartir: ';
+					    color: white;
+					    margin-right: 10px;
+					}
+					a {
+						svg {
+						    width: 30px;
+						    height: 30px;
+						    display: block;
+						    path {
+							    fill: white;
+							}
+						}
+						&#whatsapp {
+							width: 30px;
+						    text-align: center;
+						    display: flex;
+						    justify-content: center;
+						    align-items: center;
+						    svg {
+							    width: 17px;
+							    height: 18px;
+							    margin: auto;
+							}
+						}
+					}
+				}
 		    }
 		}
 	}

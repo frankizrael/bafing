@@ -11,7 +11,7 @@ get_header();
 				foreach ($soluciones as $ss) {
 					?>
 					<div class="NavChild__item">
-						<a href="#<?php echo $ss['id'];?>">
+						<a href="#sec_<?php echo $ss['id'];?>">
 							<img src="<?php the_field('icon',$ss['id']); ?>">
 							<span><?php echo get_the_title($ss['id']);?></span>
 						</a>
@@ -22,11 +22,30 @@ get_header();
 		</div>
 	</div>
 </div>
+<section class="first-template">
+	<div class="ff_template">
+		<?php 
+			$soluciones = get_field('soluciones');
+			foreach ($soluciones as $ss) {
+				?>
+				<div class="ff_template__item">
+					<a href="#sec_<?php echo $ss['id'];?>" style="background-image: url('<?php the_field('background_init',$ss['id']); ?>');">
+						<div class="title_a">
+							<img src="<?php the_field('icon',$ss['id']); ?>">
+							<span><?php echo get_the_title($ss['id']);?></span>
+						</div>
+					</a>
+				</div>
+				<?php
+			}
+		?>
+	</div>
+</section>
 <?php 
 	$solucionesContent = get_field('soluciones');
 	foreach ($solucionesContent as $ssc) {
 ?>
-<section id="<?php echo $ssc['id']; ?>" class="section">
+<section id="sec_<?php echo $ssc['id']; ?>" class="section">
 	<article class="banner backImagen backImagen--center backImagen--fixed" style="background-image: url('<?php echo get_the_post_thumbnail_url($ssc['id']); ?>');">
 		<div class="x-container fullheight posRelative">
 			<div class="posAbsolute banner__title">
@@ -54,6 +73,10 @@ get_header();
 				<div class="box">
 					<div class="flex">
 						<div class="left">
+							<div class="especial_title">
+								<img src="<?php the_field('icon',$ssc['id']); ?>">
+								<h2><?php echo get_the_title($ssc['id']);?></h2>
+							</div>
 							<div class="contenido_left">
 								<?php the_field('contenido_servicios',$ssc['id']); ?>
 							</div>

@@ -1,0 +1,77 @@
+@import "variables";
+@import "utilities";
+.banner {
+	position: relative;
+	z-index: 1;
+	margin-top: 121px;
+	background-size: cover;
+    background-position: center;
+	.titlePrincipal {
+		height: 250px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		.title {
+			margin-bottom: 0px;
+			h1 {
+				font-size: 55px;
+				color: white;
+			}
+		}
+	}
+}
+.ss_banner {
+	.flex {
+	    display: flex;
+	    justify-content: space-between;
+	}
+	.content {
+	    padding: 20px 0px;
+	    max-width: 600px;
+	    p {
+		    margin-bottom: 20px;
+		    font-size: 16px;
+		    line-height: 20px;
+		}
+	    li {
+		    margin-bottom: 20px;
+		    font-size: 16px;
+		    position: relative;
+		    padding-left: 17px;
+		    a {
+			    color: $azul;
+			    font-weight: 700;
+			}
+			&:before {
+			    content: '';
+			    display: inline-block;
+			    width: 6px;
+			    height: 6px;
+			    transform: rotate(-45deg);
+			    border-right: solid 1px $azul;
+			    border-bottom: solid 1px $azul;
+			    position: absolute;
+			    left: 0px;
+			    top: 7px;
+			}
+		}
+	}
+	.boxBorder {
+	    position: relative;
+	    top: -70px;
+	    z-index: 5;
+	    background: white;
+	    max-width: 400px;
+	    &__title {
+	    	margin-bottom: 20px;
+	    	h3 {
+	    		font-size: 20px;
+	    		text-align: center;
+	    	}	    	
+	    }
+	}
+
+}
+#map_canvas {
+	height: 400px;
+}

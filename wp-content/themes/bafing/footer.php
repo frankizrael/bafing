@@ -10,7 +10,24 @@
 					?>
 				</div>
 				<div class="right">
-					<?php echo do_shortcode('[contact-form-7 id="60" title="suscripcion"]'); ?>
+					<div class="top">
+						<?php echo do_shortcode('[contact-form-7 id="60" title="suscripcion"]'); ?>	
+					</div>
+					<div class="bottom">
+						<h4>Síguenos</h4>
+						<ul>
+						<?php
+							$social = get_field('social','options');
+							foreach ($social as $s) {
+								?>
+							<li>
+								<a href="<?php echo $s['link']; ?>"><img src="<?php echo $s['img']; ?>"></a>
+							</li>
+								<?php
+							}
+						?>
+						</ul>
+					</div>	
 				</div>
 			</div>
 		</div>

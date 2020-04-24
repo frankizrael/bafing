@@ -33,6 +33,38 @@ footer {
 				    font-family: 'nexa_light';
 				    margin-right: 15px;
 				}
+				.bottom {
+					h4 {
+					    color: white;
+					    font-size: 20px;
+					    margin-top: 25px;
+					    margin-bottom: 10px;
+					}
+					ul {
+					    display: flex;
+					    a {
+						    padding: 5px;
+						    background: white;
+						    border-radius: 50%;
+						    width: 20px;
+						    height: 20px;
+						    text-align: center;
+						    margin-right: 10px;
+						    display: block;
+						    transition: .3s;
+						    &:hover {
+							    transform: scale(1.2);
+							}
+						}
+					}
+					img {
+					    width: 17px;
+					    display: block;
+					    margin: auto;
+					    position: relative;
+					    top: 1px;
+					}
+				}
     		}
 		}
 	}
@@ -54,3 +86,4 @@ footer {
 		}
 	}
 }
+

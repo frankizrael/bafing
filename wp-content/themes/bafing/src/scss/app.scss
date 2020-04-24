@@ -65,6 +65,9 @@ input {outline:none;}
 .x-container {
 	margin: auto;
 	max-width: calc(100% - 600px);
+	@include maxw(mypc) {
+		max-width: calc(100% - 300px);
+	}
 	@include maxw(mylaptop) {
 		max-width: calc(100% - 200px);
 	}
@@ -87,6 +90,10 @@ input {outline:none;}
 .left-container {
 	margin-left: 300px;
 	max-width: calc(100% - 300px);
+	@include maxw(mypc) {
+		margin-left: 150px;
+		max-width: calc(100% - 150px);
+	}
 	@include maxw(mylaptop) {
 		margin-left: 100px;
 		max-width: calc(100% - 100px);
@@ -146,7 +153,90 @@ input {outline:none;}
 	}
 }
 
-
+.form {
+	.flexInput {
+		margin-bottom: 20px;
+		flex-wrap: wrap;
+		&.flex {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	.inputCrow {	
+		width: calc(50% - 10px);
+		flex: none;
+		box-sizing: border-box;		
+		label {
+			display: block;
+			font-size: 14px;
+		    font-weight: 700;
+		    margin-bottom: 5px;	
+		    color: $azul;		
+		}
+		br {
+			display: none;
+		}
+		span {
+			display: block;
+		}
+		input, select {
+			font-family: 'nexa_light';
+		    border: solid 1px $azul;
+		    background: #f7f7f7;
+		    color: black;
+		    width: 100%;
+		    padding: 10px;
+		    box-sizing: border-box;
+		    border-radius: 5px;
+		}
+		&.fullcrow {
+			width: 100%;
+		}
+	}
+	.flexNotText {
+		margin-bottom: 20px;
+		box-sizing: border-box;
+		label {
+			display: block;
+			font-size: 14px;
+		    font-weight: 700;
+		    margin-bottom: 5px;	
+		    color: $azul;	
+		}
+		br {
+			display: none;
+		}
+		span {
+			display: block;
+		}
+		textarea {
+			font-family: 'nexa_light';
+		    border: solid 1px $azul;
+		    background: #f7f7f7;
+		    color: black;
+		    width: 100%;
+		    padding: 10px;
+		    box-sizing: border-box;
+		    border-radius: 5px;
+		    height: 90px;
+		}
+		button {
+			border:none;
+			font-size: 16px;
+		    font-family: 'nexa_bold';
+		    padding: 13px 15px;
+		    min-width: 120px;
+		    display: inline-block;
+		    text-align: center;
+		    box-sizing: border-box;
+		    border-radius: 50px;
+		    background: $orange;
+		    color: $azul;		    
+		    min-width: 200px;
+		}
+	}
+}
 ::-webkit-scrollbar-thumb {
     background: $black;
     border-radius: 10px;

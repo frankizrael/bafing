@@ -44,6 +44,9 @@
 	    .left {
 		    width: calc(60% - 20px);
 		    flex: none;
+		    @include maxw(mypc) {
+				width: calc(70% - 20px);
+			}
 		    .content_flex {
 			    display: flex;
 			    justify-content: space-between;
@@ -86,6 +89,9 @@
 				p {
 				    margin-bottom: 15px;
 				    font-size: 20px;
+				    @include maxw(mypc) {
+						font-size: 18px;
+					}
 				}
 			}
 		}
@@ -105,6 +111,15 @@
 		    color: white;
 		    position: relative;
 		    align-items: center;
+		    @include maxw(mypc) {
+				margin-right: 150px;
+			}
+			@include maxw(mylaptop) {
+				margin-right: 100px;
+			}
+			@include maxw(laptop) {
+				margin-right: 100px;
+			}
 		    &:before {
 		    	content: '';
 			    left: 50%;
@@ -133,7 +148,7 @@
 				}
 			}
 			p {
-			    font-size: 14px;
+			    font-size: 16px;
 			    color: white;
 			    line-height: 24px;
 			}
@@ -161,6 +176,15 @@
 	    display: flex;
 	    margin-right: 300px;
 	    justify-content: space-between;
+	    @include maxw(mypc) {
+			margin-right: 150px;
+		}
+		@include maxw(mylaptop) {
+			margin-right: 100px;
+		}
+		@include maxw(laptop) {
+			margin-right: 100px;
+		}
 	    .left {
 		    width: 500px;
     		flex: none;
@@ -171,7 +195,7 @@
     		}
 		}
 		.right {
-		    width: 350px;
+		    width: 450px;
 		    flex: none;
 		    position: relative;
 		}
@@ -217,7 +241,7 @@
 }
 .reconocimientos {
 	margin-bottom: 80px;
-	.premios {
+	.premios, .certificaciones {
 	    border-bottom: solid 1px rgba(86, 86, 86, 0.14);
 	    padding-bottom: 40px;
 	    margin-bottom: 40px;
@@ -262,6 +286,12 @@
 					span {
 					    transform: scale(1);
 					    opacity: 1;
+					}
+				}
+				&:nth-child(even) {
+					span {
+						color: $azul;
+						background: $orange;
 					}
 				}
 			}
