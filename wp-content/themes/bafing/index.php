@@ -21,17 +21,19 @@ get_header(); ?>
 					<div class="ss">
 						<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
 					</div>
-				</div>
-				<ul class="flex">
-					<li><a href="<?php echo site_url(); ?>/noticias" class="active">Todos</a></li>
-				    <?php wp_list_categories( array(
-				    	'title_li' => '',
-				        'orderby' => 'name'
-				    ) ); ?> 
-				</ul>				
+				</div>				
 			</div>
 			<div class="noticias posRelative">
 				<div class="noticias__content">
+					<div class="noticias__left">						
+						<ul class="list_tags">
+							<li><a href="<?php echo site_url(); ?>/noticias" class="active">Todos</a></li>
+						    <?php wp_list_categories( array(
+						    	'title_li' => '',
+						        'orderby' => 'name'
+						    ) ); ?> 
+						</ul>
+					</div>
 					<div class="noticias__right">
 						<div class="noticias__right__content">
 							<div class="noticias__right__content__swiper">

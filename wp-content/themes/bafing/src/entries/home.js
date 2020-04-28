@@ -31,6 +31,8 @@ var mySwiperInit = new Swiper('#testimonios_slider .swiper-container', {
     slidesPerView: 'auto'
 });
 
+//autoload
+
 var mySwiperInit = new Swiper('.init .swiper-container', {
     speed: 400,
     pagination: {

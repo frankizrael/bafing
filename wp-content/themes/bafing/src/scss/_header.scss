@@ -7,9 +7,10 @@ header {
 	z-index: 10;
 	transition: 0.3s;
 	.x-container {
-		padding: 35px 0px;
+		padding: 25px 0px;
 		transition: 0.3s;
 		border-bottom: solid 1px white;
+		padding-bottom: 20px;
 	}	
 	.nav {
 		display: flex;
@@ -65,16 +66,11 @@ header {
 						display: block;
 						color: white;
 						padding: 0px 10px;
-    					font-size: 18px;
+    					font-size: 20px;
     					font-family: 'nexa_bold';
     					border-right: solid 1px white;
 					    padding-right: 15px;
 					    margin-left: 5px;
-    					&:after {
-						    content: '.';
-						    color: #f7d52e;
-						    margin-left: 2px;
-						}
 					}
 					&.menu-item-has-children {
 					    position: relative;
@@ -125,6 +121,7 @@ header {
 		box-shadow: 0px 3px 4px rgba(76, 76, 76, 0.23);
 		.x-container {
 			padding: 15px 0px;
+			padding-bottom: 10px;
 		}
 		.nav {
 			&__left {
@@ -176,8 +173,8 @@ header {
 			    transition: 0.3s;
     			position: relative;
 			    svg {
-				    width: 25px;
-				    height: 25px;
+				    width: 35px;
+				    height: 35px;
 				    display: block;
 				    margin: auto;
     				path {

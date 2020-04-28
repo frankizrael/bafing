@@ -63,10 +63,7 @@ get_header();
 						foreach ($soluciones as $ss) {
 							?>
 					<div class="soluciones__content__item soluciones-<?php echo sanitize_title($ss['title']); ?>">
-						<a href="<?php echo $ss['link']; ?>">
-							<div class="imagen_s" style="display: none">
-								<img src="<?php echo $ss['imagen']; ?>">
-							</div>
+						<a href="<?php echo $ss['link']; ?>" style="background-image: url(<?php echo $ss['imagen']; ?>)">
 							<div class="content_s">
 								<h3>
 								<span><img src="<?php echo $ss['icon']; ?>"></span><?php echo $ss['title']; ?></h3>
@@ -160,7 +157,7 @@ get_header();
 	<div class="x-container">
 		<div class="title">
 			<h2>Últimas noticias</h2>
-			<a href="#" class="btn">Ver más noticias</a>
+			<a href="<?php echo site_url();?>/noticias" class="btn">Ver más noticias</a>
 		</div>
 		<div class="blogsContent">
 			<?php
@@ -181,6 +178,17 @@ get_header();
 					<?php
 				}
 			?>
+			<div class="blogsContentItem eventoDesu" style="background-image: url('<?php the_field('evento_imagen'); ?>');">
+				<a href="<?php the_field('evento_link'); ?>" target="_blank">
+					<div class="title-top">
+						<?php the_field('evento_date'); ?>
+					</div>
+					<div class="title-bot">
+						<h3><?php the_field('evento_title'); ?></h3>
+						<span>Leer más</span>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
 </section>

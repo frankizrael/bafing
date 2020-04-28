@@ -105,7 +105,7 @@ get_header();
 		<div class="box">
 			<div class="premios">
 				<div class="title">
-					<h2>Reconocimientos</h2>
+					<h2>Certificaciones</h2>
 				</div>
 				<div class="contenido">
 					<ul>

@@ -24,9 +24,15 @@ get_header();
 				<li>
 					<a href="#clientes">Clientes</a>
 				</li>
+				<?php
+					if (get_field('partners')) {
+						?>				
 				<li>
 					<a href="#partners">Partners</a>
-				</li>				
+				</li>
+						<?php
+					}
+				?>				
 				<li>
 					<a href="#noticias">Noticias</a>
 				</li>
@@ -79,6 +85,9 @@ get_header();
 									</div>
 									<div class="accordeon__body">
 										<div class="flex">
+											<div class="center">
+												<?php echo $ac['center']; ?>
+											</div>
 											<div class="left">
 												<?php echo $ac['left']; ?>
 											</div>
@@ -112,7 +121,8 @@ get_header();
 						foreach ($list as $li) {
 					?>
 					<li>
-						<?php echo $li['text']; ?>
+						<div class="tt"><?php echo $li['cliente']; ?></div>
+						<div class="cc"><?php echo $li['text']; ?></div>
 					</li>
 					<?php
 						}
@@ -143,6 +153,9 @@ get_header();
 		</div>
 	</div>
 </section>
+<?php
+	if (get_field('partners')) {
+		?>	
 <section class="partners" id="partners">
 	<div class="menu-container box">
 		<div class="title">
@@ -177,6 +190,9 @@ get_header();
 		</div>
 	</div>
 </section>
+<?php
+	}
+?>	
 <section class="noticias" id="noticias">
 	<div class="menu-container">
 		<div class="title">

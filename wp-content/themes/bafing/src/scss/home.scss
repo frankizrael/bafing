@@ -205,7 +205,24 @@
 	    &__item {
 		    width: calc(50% - 20px);
 		    background: #efeeee;
-    		margin: 10px;	    
+    		margin: 10px;	 
+    		a {
+    			display: block;
+			    background-size: cover;
+			    position: relative;
+			    background-position: center;
+			    z-index: 2;
+			    &:before {
+				    content: '';
+				    position: absolute;
+				    width: 100%;
+				    height: 100%;
+				    background: black;
+				    z-index: -1;
+				    opacity: 0.4;
+				    transition: 0.3s;
+				}
+    		}   
 		    .content_s {
 		    	padding: 40px 30px;
 			    height: 310px;
@@ -213,13 +230,28 @@
 		    	h3 {
 		    		font-size: 25px;
 				    font-weight: 700;
-				    color: $azul;
+				    color: white;
+				    transition: 0.3s;
 		    		span {
-		    			display: block;
+					    display: block;
 					    margin-bottom: 10px;
 					    transition: 0.3s;
+					    position: relative;
+					    z-index: 1;
+					    padding-left: 15px;
 		    			img {
 		    				width: 50px;
+		    			}
+		    			&:before {
+		    				content: '';
+						    position: absolute;
+						    width: 80px;
+						    height: 80px;
+						    background: #ffffffbf;
+						    z-index: -1;
+						    border-radius: 50%;
+						    top: -17px;
+						    left: 0px;
 		    			}
 		    		}
 		    		&:after {
@@ -228,10 +260,13 @@
 					}
 		    	}
 		    	.contet {
-				    padding: 10px 0px;
+				    height: 0px;
+				    overflow: hidden;
+				    transition: 0.3s;
+				    transition-delay: 0.3s;
 				    p {
 					    font-size: 16px;
-					    color: #3f4244;
+					    color: white
 					}
 				}
 				.link {
@@ -240,36 +275,55 @@
 				    margin-top: 30px;
 					p {
 						display: block;
-					    color: $azul;
+					    color: white;
 					    font-weight: 700;
 					    transform: translateX(-80px);
 					    transition: .3s;
 					    width: 70px;
     					position: relative;
+    					transition-delay: 0.6s;
 					    &:before {
 					    	content: '';
 						    position: absolute;
-						    width: 150px;
+						    width: 50px;
 						    height: 4px;
 						    background: $orange;
 						    top: 9px;
 						    right: 0px;
+						    transform: translateX(50px);
 					    }
 					}
 				}
 		    }
 		    &:hover {
+		    	a {
+		    		&:before {
+					    opacity: 0.8;
+					    background: #efeeee;
+		    		}
+		    	}
 		    	.content_s {
 		    		h3 {
+		    			color: $azul;
 		    			span {
 		    				transform: translateY(-5px);
 		    				margin-bottom: 15px;
+					    	padding-left: 0px;
+					    	&:before { opacity: 0; }
 		    			}
+		    		}
+		    	}
+		    	.contet {
+		    		height: 60px;
+		    		padding: 10px 0px;
+		    		p {
+		    			color: #060101;
 		    		}
 		    	}
 		    	.link {
 		    		p {
 		    			transform: none;
+		    			color: $azul;
 		    		}
 		    	}
 		    }
@@ -457,6 +511,24 @@
 					    display: inline-block;
 					    margin-top: 20px;
 					    border-bottom: solid 2px white;
+					}
+				}
+			}
+			&.eventoDesu {
+				&:before {
+					opacity: 0.7;
+					a {
+						.title-top {
+							text-align: center;
+							width: 100%;
+							left: 0px;
+						}
+						.title-bot {
+							text-align: center;
+						    bottom: auto;
+						    top: 50%;
+						    transform: translateY(-40%);
+						}
 					}
 				}
 			}

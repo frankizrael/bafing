@@ -2,7 +2,7 @@
 @import "utilities";
 .NavChild {
 	width: 100%;
-    top: 121px;
+    top: 116px;
     background: #eaeaea;
     padding: 3px 0px;
     z-index: 6;
@@ -18,10 +18,11 @@
     		display: flex;
     		align-items: center;
     		opacity: 0.5;
-    		padding: 5px 10px;
-		    margin: 10px 0px;
+    		padding: 2px 10px;
+		    margin: 5px 0px;
 		    border-left: solid 1px #bdbdbd54;
 		    border-right: solid 1px #bdbdbd54;
+		    transition: 0.3s;
     		i {
     			svg {
     				width: auto;
@@ -32,7 +33,8 @@
     			}
     		}
     		img {
-			    width: 30px;
+			    width: 0px;
+			    transition: 0.3s;
 			}
     		span {
     			cursor: pointer;
@@ -160,6 +162,15 @@
 	    	}
     	}
     }
+    &:hover {
+    	a {    		
+    		padding: 5px 10px;
+		    margin: 10px 0px;
+    		img {
+    			width: 30px;
+    		}
+    	}
+    }
 }
 .section {
 	.banner {
@@ -251,6 +262,12 @@
 				    padding: 25px 0px;
 				    font-size: 20px;
 				    line-height: 26px;
+				}
+				.vermas {
+				    margin-top: 20px;
+				    a {
+					    min-width: 200px;
+					}
 				}
 		    }
 		    .right {

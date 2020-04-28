@@ -20,7 +20,7 @@
 }
 .single {
 	.banner {
-		margin-top: 121px;
+		margin-top: 116px;
 		.titlePrincipal {
 			height: 350px;
 			position: relative;
@@ -149,12 +149,9 @@
 			font-size: 24px;
 			line-height: 24px;
 		}
-		.flex {
-		    display: flex;
-		    margin-top: 10px;
-		    margin-bottom: 15px;
+		.list_tags {
 		    li {
-			    margin-right: 10px;
+			    margin-bottom: 10px;
 			    a {
 				    border: solid 1px #3374ac;
 				    color: #3374ac;
@@ -166,11 +163,27 @@
 				}
 			}
 		}
+		.noticias {
+			&__content {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				margin-top: 20px;
+			}
+			&__left {
+				width: 200px;
+				flex: none;
+			}
+			&__right {
+				width: calc(100% - 250px);
+				flex: none;
+			}
+		}
 		.noticias__right__content__swiper {
 		    display: flex;
 		    justify-content: space-beetwen;
 		    .noticias__item {
-		    	width: calc(33.33% - 10px);
+		    	width: calc(50% - 10px);
 		    	border: solid 1px #9a9a9a52;
 		    	&__img {
 		    		position: relative;
@@ -184,7 +197,7 @@
 		    	&__date {
 		    		position: absolute;
 		    		color: white;
-				    top: 0px;
+				    top: 5px;
 				    right: 5px;
 				    svg {
 				    	margin-right: 5px;
@@ -219,6 +232,20 @@
 		    	&.destacado {
 		    		background: $orange;
     				border: solid 1px $orange;
+    				width: 100%;
+    				display: flex;
+    				align-items: center;
+    				.noticias__item__img {
+    					width: 50%;
+    					flex: none;
+    					img {
+    						height: 350px;
+    					}
+    				}
+    				.noticias__item__content {
+    					width: 50%;
+    					flex: none;
+    				}
     				.link {
     					background: $azul;
     					color: white;
