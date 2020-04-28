@@ -21,14 +21,14 @@ $('.NavChild__item a').on('click', function(event){
 	event.preventDefault();
 	let $this = $(this);
 	let href = $this.attr('href');
-	$('html, body').stop().animate({scrollTop: $(href).offset().top - 73}, 800);
+	$('html, body').stop().animate({scrollTop: $(href).offset().top}, 800);
 });
 
 $('.ff_template__item a').on('click', function(event){
 	event.preventDefault();
 	let $this = $(this);
 	let href = $this.attr('href');
-	$('html, body').stop().animate({scrollTop: $(href).offset().top - 73}, 800);
+	$('html, body').stop().animate({scrollTop: $(href).offset().top}, 800);
 });
 
 //

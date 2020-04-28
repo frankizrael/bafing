@@ -12,7 +12,8 @@ module.exports = function(env) {
             nosotros: "./src/entries/nosotros.js",
             soluciones: "./src/entries/soluciones.js",
             soluciones_principal: "./src/entries/soluciones_principal.js",            
-            contact: "./src/entries/contacto.js"
+            contact: "./src/entries/contacto.js",
+            multimedia: "./src/entries/multimedia.js"
         },
         target: "web",
         mode: env.NODE_ENV,

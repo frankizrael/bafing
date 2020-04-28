@@ -192,7 +192,8 @@
 			color: white;
 			max-width: 540px;
 			position: absolute;
-    		top: 350px;
+    		top: calc(50% + 50px);
+    		transform: translateY(-50%);
 			h2 {
 				font-size: 60px;
 				line-height: 60px;
@@ -267,6 +268,19 @@
 				    margin-top: 20px;
 				    a {
 					    min-width: 200px;
+					    padding-right: 45px;
+					    position: relative;
+					    color: #3374ac;
+					    font-weight: 700;
+					    &:before {
+					    	content: '';
+						    position: absolute;
+						    width: 40px;
+						    height: 3px;
+						    background: $orange;
+						    right: 0;
+						    top: 10px;
+					    }
 					}
 				}
 		    }
@@ -415,13 +429,25 @@
 						opacity: 0;
 					}
 					.title_a {
-					    background: white;
+					    background: #ffffffc9;
 					    margin-top: -20px;
 					    img {
 						    opacity: 1;
 						}
 						span {
 						    color: $azul;
+						}
+					}
+				}
+			}			
+			&:nth-child(even) {
+				a {
+					&:hover {
+						.title_a {
+							background: #3374aca1;
+							span {
+								color: white;
+							}
 						}
 					}
 				}

@@ -33,10 +33,11 @@
 	.title {
 		color: white;
 		position: absolute;
-		top: 50%;
+		top: calc(50% - 50px);
 		left: 0px;
 		transform: translateY(-50%);
 	    max-width: 650px;
+	    margin-bottom: 0px;
 	    h1 {
 	    	font-size: 65px;
 	    	margin-bottom: 45px;
@@ -326,7 +327,10 @@
 		    			color: $azul;
 		    		}
 		    	}
-		    }
+		    }		    
+			&.soluciones-seguridad-gestionada {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -515,19 +519,74 @@
 				}
 			}
 			&.eventoDesu {
+				display: flex;
+			    align-items: center;
+			    background: white;
 				&:before {
-					opacity: 0.7;
-					a {
-						.title-top {
-							text-align: center;
-							width: 100%;
-							left: 0px;
+					opacity: 0;
+				}				
+				a {
+					.title-top {
+						text-align: center;
+						width: 100%;
+						left: 0px;
+					}
+					.title-bot {
+						text-align: center;
+					    bottom: auto;
+					    top: 50%;
+					    transform: translateY(-40%);
+					}
+				}
+				.content_eventos {
+					.evento_item {
+					    display: flex;
+					    a {
+						    display: flex !important;
+						    align-items: center;
+						    margin: 5px 10px;
+						    border-bottom: solid 1px #afafaf7a;
+						    padding-bottom: 10px;
 						}
-						.title-bot {
-							text-align: center;
-						    bottom: auto;
-						    top: 50%;
-						    transform: translateY(-40%);
+						&__img {
+						    width: 120px;
+						    flex: none;
+						    margin-right: 10px;
+						    img {
+							    width: 100%;
+							    height: 120px;
+							    object-fit: cover;
+							    display: block;
+							}
+						}
+						&__text {
+							.date {
+							    font-size: 12px;
+							    margin-bottom: 10px;
+							    color: #949494;
+							}
+							.text {
+							    color: $azul;
+							    font-size: 18px;
+							    font-weight: 700;
+							}
+							.link {
+								p {
+									position: relative;
+								    padding-left: 35px;
+								    color: $azul;
+								    margin-top: 15px;
+								    &:before {
+								    	content: '';
+									    left: 0px;
+									    width: 30px;
+									    position: absolute;
+									    height: 3px;
+									    background: $orange;
+									    top: 9px;
+								    }
+								}
+							}
 						}
 					}
 				}

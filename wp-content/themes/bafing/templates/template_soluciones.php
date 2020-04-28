@@ -115,19 +115,26 @@ get_header();
 				<h2>Nuestra Experiencia</h2>
 			</div>
 			<div class="listColums">
-				<ul>
-					<?php
-						$list = get_field('list');
-						foreach ($list as $li) {
-					?>
-					<li>
-						<div class="tt"><?php echo $li['cliente']; ?></div>
-						<div class="cc"><?php echo $li['text']; ?></div>
-					</li>
-					<?php
-						}
-					?>
-				</ul>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<?php
+							$banner = get_field('list');
+								if ($banner){
+									foreach($banner as $ban) {
+						?>
+							<div class="swiper-slide">
+								<div class="list_a">
+									<div class="tt"><?php echo $ban['cliente']; ?></div>
+									<div class="cc"><?php echo $ban['text']; ?></div>
+								</div>
+							</div>
+						<?php
+								}
+							}
+						?>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
 			</div>
 		</div>
 	</div>

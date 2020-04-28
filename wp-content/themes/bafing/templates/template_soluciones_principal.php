@@ -81,7 +81,7 @@ get_header();
 								<?php the_field('contenido_servicios',$ssc['id']); ?>
 							</div>
 							<div class="vermas">
-								<a href="<?php the_permalink($ssc['id']);?>" class="btn">Ver más</a>						
+								<a href="<?php the_permalink($ssc['id']);?>" class="link">Ver más</a>						
 							</div>
 						</div>
 						<div class="right">

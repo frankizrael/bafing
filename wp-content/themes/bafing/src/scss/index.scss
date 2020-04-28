@@ -160,6 +160,10 @@
 				    min-width: 100px;
 				    display: block;
 				    text-align: center;
+				    &:hover {
+				    	background: #3374ac;
+				    	color: white;
+				    }
 				}
 			}
 		}
@@ -190,7 +194,7 @@
 		    		img {
 		    			width: 100%;
 		    			display: block;
-		    			height: 250px;
+		    			height: 200px;
     					object-fit: cover;
 		    		}
 		    	}
@@ -236,7 +240,7 @@
     				display: flex;
     				align-items: center;
     				.noticias__item__img {
-    					width: 50%;
+    					width: 45%;
     					flex: none;
     					img {
     						height: 350px;
@@ -245,6 +249,7 @@
     				.noticias__item__content {
     					width: 50%;
     					flex: none;
+    					box-sizing: border-box;
     				}
     				.link {
     					background: $azul;

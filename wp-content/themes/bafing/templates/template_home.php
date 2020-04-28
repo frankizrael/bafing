@@ -178,16 +178,30 @@ get_header();
 					<?php
 				}
 			?>
-			<div class="blogsContentItem eventoDesu" style="background-image: url('<?php the_field('evento_imagen'); ?>');">
-				<a href="<?php the_field('evento_link'); ?>" target="_blank">
-					<div class="title-top">
-						<?php the_field('evento_date'); ?>
-					</div>
-					<div class="title-bot">
-						<h3><?php the_field('evento_title'); ?></h3>
-						<span>Leer más</span>
-					</div>
-				</a>
+			<div class="blogsContentItem eventoDesu">
+				<div class="content_eventos">
+					<?php
+						$eventos = get_field('eventos');
+						foreach ($eventos as $ev) {
+							?>
+						<div class="evento_item">
+							<a href="<?php echo $ev['link']; ?>" target="_blank">
+								<div class="evento_item__img">
+									<img src="<?php echo $ev['img']; ?>">
+								</div>
+								<div class="evento_item__text">
+									<div class="date"><?php echo $ev['date']; ?></div>
+									<div class="text"><?php echo $ev['text']; ?></div>
+									<div class="link">
+										<p>Ver más</p>
+									</div>
+								</div>
+							</a>
+						</div>
+							<?php
+						}
+					?>
+				</div>
 			</div>
 		</div>
 	</div>
