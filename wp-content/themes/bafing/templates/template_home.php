@@ -178,8 +178,24 @@ get_header();
 					<?php
 				}
 			?>
-			<div class="blogsContentItem eventoDesu">
-				<div class="content_eventos">
+		</div>
+	</div>
+</section>
+<section class="rrss noticias">
+	<div class="x-container">
+		<div class="title">
+			<h2><?php the_field('title_social'); ?></h2>
+		</div>
+		<div class="rss-content ">
+			<div class="rss-fb box">
+				<div class="fb-page" data-href="https://www.facebook.com/bafingsac/" data-tabs="timeline, events, messages" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bafingsac/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bafingsac/">Bafing S.A.C.</a></blockquote></div>
+			</div>
+			<div class="rss-tweet box">
+				<a class="twitter-timeline" href="https://twitter.com/BafingSAC?ref_src=twsrc%5Etfw">Tweets by BafingSAC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+			<div class="eventoDesu box">
+				<div class="content_eventos">	
+					<div class="titleDesu">Próximos Eventos</div>				
 					<?php
 						$eventos = get_field('eventos');
 						foreach ($eventos as $ev) {
@@ -203,9 +219,11 @@ get_header();
 					?>
 				</div>
 			</div>
-		</div>
+		</div>		
 	</div>
 </section>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v7.0&appId=481644492198975&autoLogAppEvents=1"></script>
 <?php
 get_footer();
 ?>

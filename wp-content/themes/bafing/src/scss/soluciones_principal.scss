@@ -439,18 +439,6 @@
 						}
 					}
 				}
-			}			
-			&:nth-child(even) {
-				a {
-					&:hover {
-						.title_a {
-							background: #3374aca1;
-							span {
-								color: white;
-							}
-						}
-					}
-				}
 			}
 		}
 	}

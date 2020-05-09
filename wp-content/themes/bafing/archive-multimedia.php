@@ -1,5 +1,5 @@
 <?php 
-set_query_var('ENTRY', 'index');
+set_query_var('ENTRY', 'multimedia');
 $frontpage_id = get_option( 'page_on_front' );
 $blog_id = get_option( 'page_for_posts' );
 get_header(); ?>
@@ -8,7 +8,7 @@ get_header(); ?>
 <section class="init banner flex align-items-center" style="background-image: url(<?php echo get_the_post_thumbnail_url($blog_id); ?>);">
 	<div class="x-container titlePrincipal">
 		<div class="title title--white">
-			<h1>Noticias</h1>
+			<h1>Multimedia</h1>
 		</div>	
 	</div>
 </section>
@@ -25,16 +25,7 @@ get_header(); ?>
 			</div>
 			<div class="noticias posRelative">
 				<div class="noticias__content">
-					<div class="noticias__left">						
-						<ul class="list_tags">
-							<li><a href="<?php echo site_url(); ?>/noticias" class="active">Todos</a></li>
-						    <?php wp_list_categories( array(
-						    	'title_li' => '',
-						        'orderby' => 'name'
-						    ) ); ?> 
-						</ul>
-					</div>
-					<div class="noticias__right">
+					<div class="noticias__full">
 						<div class="noticias__right__content">
 							<div class="noticias__right__content__swiper">
 								<?php
@@ -109,16 +100,11 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="noticias__item__content">
-														<div class="tag">
-															<?php
-																$categories = get_the_terms( get_the_ID(), 'category' );
-																foreach( $categories as $category ) {
-																    echo '<a href="'.$category->slug.'">'.$category->name.'</a>';
-																}
-															?>
-														</div>
 														<div class="title title--little title--nopoint">
 															<h3><?php echo get_the_title(get_the_ID()); ?></h3>
+															<div class="desc">
+																<?php the_field('extract',get_the_ID()); ?>
+															</div>
 														</div>
 														<div class="linkContent">
 															<a href="<?php echo get_permalink(get_the_ID());?>" class="link">Ver más</a>
@@ -171,15 +157,13 @@ get_header(); ?>
 													</div>
 													<div class="noticias__item__content">
 														<div class="tag">
-															<?php
-																$categories = get_the_terms( get_the_ID(), 'category' );
-																foreach( $categories as $category ) {
-																    echo '<a href="'.$category->slug.'">'.$category->name.'</a>';
-																}
-															?>
+															
 														</div>
 														<div class="title title--little title--nopoint">
 															<h3><?php echo get_the_title(get_the_ID()); ?></h3>
+															<div class="desc">
+																<?php the_field('extract',get_the_ID()); ?>
+															</div>
 														</div>
 														<div class="linkContent">
 															<a href="<?php echo get_permalink(get_the_ID());?>" class="link">Ver más</a>

@@ -1,5 +1,5 @@
 <?php
-set_query_var('ENTRY', 'index');
+set_query_var('ENTRY', 'multimedia');
 $blog_id = get_option( 'page_for_posts' );
 get_header(); ?>
 <?php get_template_part('include/nav'); ?>
@@ -43,14 +43,6 @@ get_header(); ?>
 				<div class="tags">
 					<div class="flex justify-content-between align-items-center">
 						<div class="left_a flex">
-							<div class="tag">
-								<?php
-									$categories = get_the_terms( $noticia['id'], 'category' );
-									foreach( $categories as $category ) {
-									    echo '<a href="'.$category->slug.'">'.$category->name.'</a>';
-									}
-								?>
-							</div>
 							<div class="date">
 								<svg id="tiempo" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 								  <path id="icon" d="M2.4,2.4A7.263,7.263,0,0,1,8,0a7.263,7.263,0,0,1,5.6,2.4A7.263,7.263,0,0,1,16,8a7.263,7.263,0,0,1-2.4,5.6A7.263,7.263,0,0,1,8,16a7.263,7.263,0,0,1-5.6-2.4A7.984,7.984,0,0,1,0,8,7.263,7.263,0,0,1,2.4,2.4Zm9.2,9.2.933-.933L9.2,7.333,8,2H6.667V8a1.21,1.21,0,0,0,.4.933.466.466,0,0,0,.267.133Z"/>
@@ -96,7 +88,38 @@ get_header(); ?>
 					</div>					
 				</div>
 				<div class="contenido">
-					<?php the_content();?>
+					<div class="contenido__flex">
+						<div class="contenido__left">
+							<div class="video-c">
+								<div class="youtube-f">
+									<?php the_field('youtube'); ?>
+								</div>
+								<div class="buttons">
+									<a href="javascript:void(0)" class="btn"><?php the_field('videomp4_text'); ?></a>
+									<a href="<?php the_field('videomp4'); ?>" id="descargarfile" style="display: none;">descargarfile</a>
+									<div class="video-form">
+										<div class="formC" title="<?php the_title(); ?>">
+											<?php echo do_shortcode('[contact-form-7 id="342" title="contact_d"]');?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="contenido__right">
+							<div class="x-content">
+								<?php
+									if (have_posts()) {
+						   			while (have_posts()) {
+								        the_post();
+								        ?>
+								        <?php the_content(); ?>
+								    <?php 
+										} 
+									} 
+								?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -135,14 +158,6 @@ get_header(); ?>
 								</a>
 							</div>
 							<div class="noticias__item__content">
-								<div class="tag">
-									<?php
-										$categories = get_the_terms( get_the_ID(), 'category' );
-										foreach( $categories as $category ) {
-										    echo '<a href="'.$category->slug.'">'.$category->name.'</a>';
-										}
-									?>
-								</div>
 								<div class="title--nopoint">
 									<h3><a href="<?php echo get_permalink(get_the_ID()); ?>"><?php echo get_the_title(get_the_ID()); ?></a></h3>
 								</div>

@@ -62,6 +62,42 @@ input {outline:none;}
 		}
 	}
 }
+.pag-link {
+	margin-top: 20px;
+	.navigation {
+		text-align: center;
+		margin: auto;
+    	width: auto;
+		span {
+			display: inline-block;
+		    color: $azul;
+		    width: 20px;
+		    border-bottom: solid 1px $azul;
+		    margin-right: 5px;
+		}
+		a {
+			display: inline-block;
+		    color: $azul;
+		    font-weight: 700;
+		    min-width: 20px;
+		    margin-left: 5px;
+    		margin-right: 5px;
+		    svg {
+			    height: 20px;
+			    display: block;
+			}
+		}
+	}
+}
+.pagination .navigation a.prev svg {
+    display: none;
+}
+.noticias__right__content__swiper {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .x-container {
 	margin: auto;
 	max-width: calc(100% - 600px);
