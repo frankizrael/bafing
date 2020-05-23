@@ -53,7 +53,10 @@ import TweenLite from "gsap/TweenLite";
 	
 
 //preload animation
-	
+	$('.nav__mobile').on('click',function(){
+		$('header').toggleClass('active3');
+		$('.nav__menu').toggleClass('active');
+	});
 
 //credits
 console.log("ღ Bafing ღ \n Dev con Amor por wampy para DigitalCook");

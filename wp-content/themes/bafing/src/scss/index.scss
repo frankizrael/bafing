@@ -21,11 +21,17 @@
 .single {
 	.banner {
 		margin-top: 116px;
+		@include maxw(table_max){
+			margin-top: 80px;
+		}
 		.titlePrincipal {
 			height: 350px;
 			position: relative;
 			h1 {
 				font-size: 55px;
+				@include maxw(table_max){
+					font-size: 35px;
+				}
 			}
 		}				
 		.social {
@@ -64,6 +70,10 @@
 		}		
 	}
 	.left_a {
+		@include maxw(table_max){
+		    width: 100%;
+		    flex: none;
+		}
 		.tag {
 			a {
 				background: $azul;
@@ -72,6 +82,11 @@
 			    border-radius: 5px;
 			    color: white;
 			}
+		}
+	}
+	.right_a {
+		@include maxw(table_max){
+		    margin-top: 10px;
 		}
 	}
 	.desct {
@@ -117,6 +132,7 @@
 	.flex {
  		display: flex;
     	align-items: center;
+    	flex-wrap: wrap;
     	.date {
 		    display: flex;
 		    margin-left: 15px;
@@ -173,14 +189,31 @@
 				flex-wrap: wrap;
 				justify-content: space-between;
 				margin-top: 20px;
+				@include maxw(notlaptop) {
+					display: block;
+				}
 			}
 			&__left {
 				width: 200px;
 				flex: none;
+				@include maxw(notlaptop) {
+					width: 100%;
+					margin-bottom: 10px;
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+						li {
+							margin-right: 5px;
+						}
+					}
+				}
 			}
 			&__right {
 				width: calc(100% - 250px);
 				flex: none;
+				@include maxw(notlaptop) {
+					width: 100%;					
+				}
 			}
 		}
 		.noticias__right__content__swiper {
@@ -189,6 +222,10 @@
 		    .noticias__item {
 		    	width: calc(50% - 10px);
 		    	border: solid 1px #9a9a9a52;
+		    	@include maxw(table_max) {
+					display: block;
+					width: 100%;
+				}
 		    	&__img {
 		    		position: relative;
 		    		img {
@@ -239,17 +276,31 @@
     				width: 100%;
     				display: flex;
     				align-items: center;
+    				@include maxw(table_max) {
+						display: block;
+						width: 100%;
+					}
     				.noticias__item__img {
     					width: 45%;
     					flex: none;
+    					@include maxw(table_max) {
+    						width: 100%;
+    					}
     					img {
     						height: 350px;
+    						@include maxw(table_max) {
+	    						height: 200px;
+    							object-fit: cover;
+	    					}
     					}
     				}
     				.noticias__item__content {
     					width: 50%;
     					flex: none;
     					box-sizing: border-box;
+    					@include maxw(table_max) {
+    						width: 100%;
+    					}
     				}
     				.link {
     					background: $azul;
@@ -325,6 +376,9 @@
     border: solid 1px rgba(181, 181, 181, 0.47);
     margin-bottom: 20px;
     flex: none;
+    @include maxw(tablet_p) {
+    	width: 100%;
+    }
     &__img {
 	    position: relative;
 	    img {
@@ -369,6 +423,9 @@
 	    justify-content: space-between;
 	    margin-bottom: 20px;
 	    margin-top: 20px;
+	    @include maxw(tablet_p) {
+	    	display: block;
+	    }
 	}
 }
 .title--nopoint {

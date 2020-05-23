@@ -5,6 +5,9 @@
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
+	@include maxw(table_max) {
+	    min-height: 540px;
+	}
 }
 .init {
 	position: relative;
@@ -41,10 +44,17 @@
 	    h1 {
 	    	font-size: 65px;
 	    	margin-bottom: 45px;
+	    	@include maxw(table_max) {
+	    		font-size: 35px;
+	    		margin-bottom: 15px;
+	    	}
 	    }
 	    a {
 	    	font-size: 20px;
 	    	min-width: 250px;
+	    	@include maxw(table_max) {
+	    		font-size: 18px;
+	    	}
 	    }
 	}
 	.swiper-pagination {
@@ -198,6 +208,10 @@
 		font-size: 22px;
 		color: $azul;
 		margin-bottom: 25px;
+		@include maxw(table_max) {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
 	}
 	&__content {
 		display: flex;
@@ -206,7 +220,11 @@
 	    &__item {
 		    width: calc(50% - 20px);
 		    background: #efeeee;
-    		margin: 10px;	 
+    		margin: 10px;	
+    		@include maxw(table_max) {
+    			width: 100%;
+    			margin: 10px 0px;
+    		} 
     		a {
     			display: block;
 			    background-size: cover;
@@ -233,6 +251,9 @@
 				    font-weight: 700;
 				    color: white;
 				    transition: 0.3s;
+				    @include maxw(table_min) {
+				    	font-size: 18px;
+				    }
 		    		span {
 					    display: block;
 					    margin-bottom: 10px;
@@ -267,7 +288,10 @@
 				    transition-delay: 0.3s;
 				    p {
 					    font-size: 16px;
-					    color: white
+					    color: white;
+					    @include maxw(table_min) {
+					    	font-size: 14px;
+					    }
 					}
 				}
 				.link {
@@ -349,10 +373,21 @@
 		    padding: 10px;
 		    box-sizing: border-box;
 		    margin-bottom: 10px;
+		    @include maxw(notlaptop) {
+		    	width: calc(33.33% - 10px);
+		    	background: white;
+		    }
+		    @include maxw(table_min) {
+		    	width: calc(50% - 10px);
+		    }
 		    img {
     			width: 100%;
 			    filter: grayscale(1);
 			    transition: 0.3s;
+			    @include maxw(notlaptop) {
+			    	height: 100%;
+    				object-fit: contain;
+			    }
 			}
 			&:hover {
 				img {
@@ -404,8 +439,17 @@
 
 .testimonios {
 	margin: 80px 0px;
+	@include maxw(table_max) {
+	    margin: 40px 0px;
+	}
 	.swiper-slide {
 		width: 33.33%;
+		@include maxw(notlaptop) {
+			width: 50%;
+		}
+		@include maxw(table_max) {
+		   width: 100%;
+		}
 	}
 	.item_historia {
 	    border: solid 1px #cecece;
@@ -449,6 +493,33 @@
 			}			
 			.content {
 				min-height: 200px;
+				@include maxw(mypc) {
+					min-height: 250px;
+				}
+				@include maxw(mylaptop) {
+					min-height: 300px;
+				}
+				@include maxw(notlaptop) {
+					min-height: 230px;
+				}
+				@include maxw(tablet_p) {
+					min-height: 150px;
+				    max-height: 150px;
+				    overflow: hidden;
+				    transition: 0.3s;
+				    position: relative;
+				    &:before {
+				    	content: '';
+					    width: 100%;
+					    height: 40px;
+					    position: absolute;
+					    bottom: 0px;
+					    left: 0px;
+					    background: linear-gradient(0deg, #0000002e, transparent);
+					    opacity: 0.3;
+					    pointer-events: none;
+				    }
+				}
 				p {
 				    font-size: 12px;
 				    line-height: 20px;
@@ -461,6 +532,18 @@
 			    font-size: 14px;
 			}
 		}
+		&:hover {
+			.text {
+				.content {
+					@include maxw(tablet_p) {
+					    max-height: 1000px;
+					    &:before {
+					    	display: none;
+					    }
+					}
+				}
+			}
+		}
 	}
 	/*.content_testimonios {
 		margin-right: 265px;
@@ -469,6 +552,9 @@
 }
 .noticias {
 	margin-bottom: 80px;
+	@include maxw(table_max) {
+	    margin-bottom: 40px;
+	}
 	.title {
 		display: flex;
 		align-items: center;
@@ -478,14 +564,22 @@
 	    display: flex;
 	    align-items: center;
 	    justify-content: space-between;
+	    @include maxw(table_max) {
+	    	display: block;
+	    }
 	    .blogsContentItem {
 			width: calc(33.33% - 20px);
 		    position: relative;
-		    height: 450px;
+		    height: 300px;
 		    background-size: cover;
 		    background-position: center;
 		    box-shadow: 0px 9px 15px rgba(109, 109, 109, 0.76);
 		    z-index: 2;
+		    @include maxw(table_max) {
+		    	width: 100%;
+	    		height: 350px;
+	    		margin-top: 20px;
+		    }
 		    &:before {
 			    content: '';
 			    position: absolute;
@@ -517,7 +611,35 @@
 					    border-bottom: solid 2px white;
 					}
 				}
-			}			
+			}
+			&.destacada_h {
+			    border: solid 2px #f7d52e;
+			}		
+		}		
+		.desct {
+		    position: absolute;
+		    background: $azul;
+		    color: white;
+		    display: flex;
+		    align-items: center;
+		    padding: 5px;
+		    border-radius: 5px;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    font-size: 12px;
+		    top: 15px;
+    		right: 10px;
+		    i {
+			    margin-right: 5px;
+			    svg {
+				    width: 20px;
+				    height: 20px;
+				    display: block;
+				}
+			}
+			p {
+			    letter-spacing: 1px;
+			}
 		}
 	}
 	.eventoDesu {
@@ -528,6 +650,10 @@
 	    padding: 15px 20px;
 	    box-sizing: border-box;
 	    height: 530px;
+	    @include maxw(notlaptop) {
+	    	width: 100%;
+    		margin-top: 20px;
+	    }
 		&:before {
 			opacity: 0;
 		}				
@@ -611,6 +737,22 @@
 	    box-sizing: border-box;
 	    text-align: center;
 	    background: white;
+	    @include maxw(mypc) {
+	    	width: 350px;
+	    	padding: 0px 0px;
+	    }
+	    @include maxw(notlaptop) {
+	    	width: calc(50% - 20px);
+	    	padding: 15px 20px;
+	    	flex: none;
+	    }
+	    @include maxw(table_max) {
+	    	width: 100%;
+    		margin-top: 20px;
+	    }
+	    @include maxw(table_min) {
+	    	padding: 0px;
+	    }
 	}
 	.rss-tweet {
 	    height: 530px;
@@ -618,10 +760,23 @@
 	    width: calc(33.33% - 20px);
 	    box-sizing: border-box;
 	    background: white;
+	    @include maxw(mypc) {
+	    	width: 350px;
+	    }
+	    @include maxw(notlaptop) {
+	    	width: 50%;
+	    }
+	    @include maxw(table_max) {
+	    	width: 100%;
+    		margin-top: 20px;
+	    }
 	}
 	.rss-content {
 	    display: flex;
 	    align-items: self-start;
 	    justify-content: space-between;
+	    @include maxw(notlaptop) {
+	    	flex-wrap: wrap;
+	    }
 	}
 }

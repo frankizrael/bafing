@@ -6,6 +6,9 @@
 	margin-top: 121px;
 	background-size: cover;
     background-position: center;
+    @include maxw(table_max) {
+    	margin-top: 81px;
+    }
 	.titlePrincipal {
 		height: 250px;
 		position: relative;
@@ -24,6 +27,9 @@
 	.flex {
 	    display: flex;
 	    justify-content: space-between;
+	    @include maxw(table_max) {
+	    	display: block;
+	    }
 	}
 	.content {
 	    padding: 20px 0px;
@@ -62,6 +68,11 @@
 	    z-index: 5;
 	    background: white;
 	    max-width: 400px;
+	    @include maxw(table_max) {
+	    	top: 0px;
+	    	margin-bottom: 20px;
+	    	max-width: 100%;
+	    }
 	    &__title {
 	    	margin-bottom: 20px;
 	    	h3 {

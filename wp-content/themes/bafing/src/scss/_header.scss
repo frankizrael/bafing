@@ -11,6 +11,9 @@ header {
 		transition: 0.3s;
 		border-bottom: solid 1px white;
 		padding-bottom: 20px;
+		@include maxw(table_max) {
+
+		}
 	}	
 	.nav {
 		display: flex;
@@ -27,9 +30,17 @@ header {
 			    height: 90px;
 			    position: relative;
     			top: -15px;
+    			@include maxw(table_max) {
+    				width: 100px;
+				    height: 60px;
+				    top: 0px;
+    			}
 				svg {
 					width: 350px;
     				height: auto;
+					@include maxw(table_max) {
+	    				 width: 250px;
+	    			} 
 					path {
 						fill: white;
 					}
@@ -54,6 +65,9 @@ header {
 	    	align-items: center;
 			ul {
 				display: flex;
+				@include maxw(table_max) {
+				    display: block;
+				}
 				li {
 					&:last-child {
 						a {
@@ -71,6 +85,13 @@ header {
     					border-right: solid 1px white;
 					    padding-right: 15px;
 					    margin-left: 5px;
+					    @include maxw(table_max) {
+						    color: $azul;
+						    margin-left: 0px;
+						    border: none !important;
+						    padding: 10px 0px;
+						    text-align: center;
+						}
 					}
 					&.menu-item-has-children {
 					    position: relative;
@@ -98,6 +119,9 @@ header {
 							    &:before { display: none; }
 							    &:last-child { a { border:none; } }
 							}
+							@include maxw(table_max) {
+							    display: none;
+							}
 						}					
 						&:hover {
 							.sub-menu {
@@ -110,13 +134,57 @@ header {
 			}
 		}
 		&__menu {
-			margin-right: 15px;
+			@include maxw(table_max) {
+			    position: fixed;
+			    top: 84px;
+			    left: 0;
+			    width: 100%;
+			    background: white;
+			    height: calc(100% - 60px);
+			    display: flex;
+			    justify-content: center;
+			    padding-top: 30px;
+			    box-sizing: border-box;
+			    opacity: 0;
+			    pointer-events: none;
+			    transition: 0.3s;
+			    &.active {
+			    	pointer-events: all;
+			    	opacity: 1;
+			    }
+			}
 		}
-		&__pedido {
-
+		&__mobile {
+			@include maxw(table_max) {
+				position: relative;
+			    width: 40px;
+			    height: 60px;
+			    cursor: pointer;
+			    display: flex;
+			    align-items: center;
+			    i {
+				    background: white;
+				    width: 100%;
+				    height: 2px;
+				    position: relative;
+				    &:before, &:after {
+					    content: '';
+					    position: absolute;
+					    width: 100%;
+					    height: 100%;
+					    background: white;
+					}
+				    &:after {
+					    bottom: -14px;
+					}
+					&:before {
+					    top: -14px;
+					}
+				}
+			}
 		}
 	}
-	&.active, &.active2 {
+	&.active, &.active2, &.active3 {
 		background: white;
 		box-shadow: 0px 3px 4px rgba(76, 76, 76, 0.23);
 		.x-container {
@@ -145,6 +213,12 @@ header {
 							padding-top: 40px;
 						}
 					}
+				}
+			}
+			&__mobile {
+				i {
+					background: $azul;
+					&:before, &:after { background: $azul; }
 				}
 			}
 		}
@@ -198,11 +272,22 @@ header {
 		}
 		&:first-child {
 			a {
+				background: #010F3A;
 				svg {
 					rect {
 						fill: white;
 					}
 				}
+			}
+		}
+		&:nth-child(2) {
+			a {
+				background: #5973C1;
+			}
+		}
+		&:nth-child(3) {
+			a {
+				background: #303E69;
 			}
 		}
 		.sharedModal {
@@ -212,7 +297,7 @@ header {
 		    z-index: -1;
 		    transition: 0.3s;
 		    a {
-			    background: #2a6190;
+			    background: #1B3A99 !important;
     			border-bottom: solid 1px white;
     			&:last-child {
 					border-bottom: none;

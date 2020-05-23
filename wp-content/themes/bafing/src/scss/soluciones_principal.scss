@@ -35,12 +35,18 @@
     		img {
 			    width: 0px;
 			    transition: 0.3s;
+			    @include maxw(table_max) {
+			    	width: 20px;
+			    }
 			}
     		span {
     			cursor: pointer;
     			color : $azul;
     			margin-left: 5px;
     			font-weight: 700;
+    			@include maxw(table_max) {
+			    	display: none;
+			    }
     		}
     	}
     	&:nth-child(1) {
@@ -171,6 +177,10 @@
     		}
     	}
     }
+    @include maxw(table_max) {
+    	top: auto;
+    	bottom: 0px;
+    }
 }
 .section {
 	.banner {
@@ -194,10 +204,18 @@
 			position: absolute;
     		top: calc(50% + 50px);
     		transform: translateY(-50%);
+    		@include maxw(table_max) {
+    			padding-right: 50px;
+    		}
 			h2 {
 				font-size: 60px;
 				line-height: 60px;
 				margin-bottom: 35px;
+				@include maxw(table_max) {
+					font-size: 30px;
+					line-height: 30px;
+					margin-bottom: 15px;
+				}
 				&:after {
 					content: '.';
 					color: $orange;
@@ -254,9 +272,16 @@
 		    justify-content: space-between;
 		    color: $azul;
 		    padding: 10px 0px;
+		    @include maxw(table_max) {
+		    	display: block;
+		    }
 		    .left {
 		    	width: calc(40% - 20px);
 			    flex: none;
+			    @include maxw(table_max) {
+			    	width: 100%;
+			    	margin-bottom: 20px;
+			    }
 			    .contenido_left {
 				    border-top: solid 2px $orange;
 				    border-bottom: solid 2px $orange;
@@ -287,6 +312,9 @@
 		    .right {
 		    	width: calc(60% - 20px);
 			    flex: none;
+			    @include maxw(table_max) {
+			    	width: 100%;
+			    }
 			    .accordeon_right {
 			    	.accordeon {
 			    		&__header {
@@ -332,6 +360,9 @@
 						    }
 						    .left, .right {
 						    	width: calc(50% - 10px);
+						    	@include maxw(table_max) {
+					    			width: 100%;
+					    		}
 						    }
 						    h3 {
 							    font-size: 16px;
@@ -368,6 +399,9 @@
     position: relative;
     z-index: 7;
     height: 100vh;
+    @include maxw(table_max) {
+    	display: none;
+    }
     .ff_template {
 	    display: flex;
 	    justify-content: space-between;
@@ -400,8 +434,7 @@
 				    left: 50%;
 				    background: #ffffff00;
 				    height: 200px;
-				    width: 200px;
-				    border-radius: 50%;
+    				width: 100%;
 				    box-sizing: border-box;
 				    padding-top: 42px;
 				    transition: 0.3s;

@@ -165,7 +165,7 @@
 						</g>
 						</svg>
 				</a>
-				<div class="nav__left__slider">
+				<div class="nav__left__slider" style="display: none;">
 					<?php
 						$slider = get_field('slider','options');
 						foreach ($slider as $s) {
@@ -179,6 +179,9 @@
 				</div>
 			</div>
 			<div class="nav__right">
+				<div class="nav__mobile">
+					<i></i>
+				</div>
 				<div class="nav__menu">
 					<?php
 						wp_nav_menu( array(

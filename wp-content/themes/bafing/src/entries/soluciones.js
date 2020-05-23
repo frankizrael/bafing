@@ -15,15 +15,27 @@ $('.fixedMenu a').on('click',function(){
 });
 
 var mySwiperInit = new Swiper('.listColums .swiper-container', {
+    direction: 'vertical',
     speed: 400,
     pagination: {
         el: '.listColums .swiper-pagination',
         clickable: true
     },
-    loop: true,
     autoplay: 2500,
+    slidesPerView: 1
+});
+
+var mySwiperInit = new Swiper('.content_clientes .swiper-container', {
+    speed: 400,
+    pagination: {
+        el: '.content_clientes .swiper-pagination',
+        clickable: true
+    },
+    autoplay: 2500,
+    loop: true,
     slidesPerView: 'auto'
 });
+
 
 
 

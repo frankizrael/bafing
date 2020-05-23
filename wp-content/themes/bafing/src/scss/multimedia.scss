@@ -21,13 +21,19 @@
 .single {
 	.banner {
 		margin-top: 116px;
+		@include maxw(table_max){
+			margin-top: 80px;
+		}
 		.titlePrincipal {
 			height: 350px;
 			position: relative;
 			h1 {
 				font-size: 55px;
+				@include maxw(table_max){
+					font-size: 35px;
+				}
 			}
-		}				
+		}					
 		.social {
 		    position: absolute;
 		    bottom: 10px;
@@ -64,6 +70,10 @@
 		}		
 	}
 	.left_a {
+		@include maxw(table_max){
+		    width: 100%;
+		    flex: none;
+		}
 		.tag {
 			a {
 				background: $azul;
@@ -72,6 +82,11 @@
 			    border-radius: 5px;
 			    color: white;
 			}
+		}
+	}
+	.right_a {
+		@include maxw(table_max){
+		    margin-top: 10px;
 		}
 	}
 	.desct {
@@ -276,6 +291,9 @@
 		    .noticias__item {
 		    	width: calc(33.33% - 10px);
 		    	border: solid 1px #9a9a9a52;
+		    	@include maxw(table_max) {
+					width: 100%;
+				}
 		    	&__img {
 		    		position: relative;
 		    		img {
@@ -326,17 +344,31 @@
     				width: 100%;
     				display: flex;
     				align-items: center;
+    				@include maxw(table_max) {
+						display: block;
+						width: 100%;
+					}
     				.noticias__item__img {
     					width: 45%;
     					flex: none;
+    					@include maxw(table_max) {
+    						width: 100%;
+    					}
     					img {
     						height: 350px;
+    						@include maxw(table_max) {
+	    						height: 200px;
+    							object-fit: cover;
+	    					}
     					}
     				}
     				.noticias__item__content {
     					width: 50%;
     					flex: none;
     					box-sizing: border-box;
+    					@include maxw(table_max) {
+    						width: 100%;
+    					}
     				}
     				.link {
     					background: $azul;

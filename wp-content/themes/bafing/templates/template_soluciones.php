@@ -124,8 +124,16 @@ get_header();
 						?>
 							<div class="swiper-slide">
 								<div class="list_a">
-									<div class="tt"><?php echo $ban['cliente']; ?></div>
-									<div class="cc"><?php echo $ban['text']; ?></div>
+									<div class="list_a__flex">
+										<div class="list_a__cli">
+											<div class="tt"><?php echo $ban['cliente']; ?></div>
+											<div class="cc"><?php echo $ban['text']; ?></div>
+										</div>
+										<div class="list_a__img">
+											<img src="<?php echo $ban['cliente_imagen']; ?>">	
+										</div>
+									</div>
+									
 								</div>
 							</div>
 						<?php
@@ -145,18 +153,24 @@ get_header();
 			<h2>Nuestros clientes</h2>
 		</div>
 		<div class="content_clientes">
-			<ul>
-				<?php
-					$clientes = get_field('clientes');
-					foreach ($clientes as $cli) {
-						?>
-				<li>
-					<img src="<?php echo $cli['imagen']; ?>">
-				</li>
+			<div class="swiper-container">
+					<div class="swiper-wrapper">
 						<?php
-					}
-				?>
-			</ul>
+							$clientes = get_field('clientes');
+							foreach ($clientes as $cli) {
+						?>
+							<div class="swiper-slide">
+								<div class="imgCore">
+									<img src="<?php echo $cli['imagen']; ?>">
+								</div>
+							</div>
+						<?php
+							}
+						?>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>			
 		</div>
 	</div>
 </section>

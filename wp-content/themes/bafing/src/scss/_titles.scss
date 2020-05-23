@@ -1,10 +1,17 @@
 .title {
 	margin-bottom: 30px;
+	@include maxw(table_max) {
+    	margin-bottom: 20px;
+    }
 	h2,h3,h4 {
 		font-family: 'nexa_bold';
 		font-size: 40px;
 		line-height: 50px;
 		color: $azul;
+		@include maxw(table_max) {
+	    	font-size: 20px;
+			line-height: 25px;
+	    }
 		&:after {
 			content: '.';
 			color: $orange;

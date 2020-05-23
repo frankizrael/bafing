@@ -30,6 +30,9 @@ input {outline:none;}
 .box {
     padding: 20px 35px;
     box-shadow: 0 2px 45px 0 rgba(0,0,0,0.10);
+    @include maxw(table_min) {
+    	padding: 15px 15px;
+    }
 }
 .onlyMobile {
 	display: none;

@@ -19,13 +19,24 @@
 	}
 	.x-container {
 	    height: 450px;
+		@include maxw(notlaptop) {
+	    	height: 350px;
+	    }
 	}
 	.titlePrincipal {
 	    display: flex;
 	    align-items: center;
+	    @include maxw(notlaptop) {
+	    	align-items: flex-end;
+		    padding-bottom: 70px;
+		    box-sizing: border-box;
+	    }
 	    h1 {
 		    color: white;
 		    font-size: 60px;
+		    @include maxw(table_min) {
+		    	font-size: 40px;
+		    }
 		}
 	}
 }
@@ -37,19 +48,32 @@
 	    top: -75px;
 	    z-index: 2;
 	    background: white;
+	    @include maxw(notlaptop) {
+	    	top: 0px;
+	    	margin-top: 20px;
+	    }
     }
 	.flex {
 	    display: flex;
-	    justify-content: space-between;
+	    justify-content: space-between;	
+	    @include maxw(notlaptop) {
+	    	display: block;
+	    }
 	    .left {
 		    width: calc(60% - 20px);
-		    flex: none;
+		    flex: none;		    
 		    @include maxw(mypc) {
 				width: calc(70% - 20px);
 			}
+			@include maxw(notlaptop) {
+		    	width: 100%;
+		    }
 		    .content_flex {
 			    display: flex;
 			    justify-content: space-between;
+			    @include maxw(table_min) {
+			    	display: block;
+			    }
 			    .content_left {
 				    width: calc(50% - 10px);
 				    flex: none;
@@ -59,6 +83,14 @@
 				    color: $azul;
 				    font-size: 21px;
     				line-height: 30px;
+    				@include maxw(laptop) {
+					    font-size: 16px;
+    					line-height: 24px;    	
+	    			}
+	    			@include maxw(table_min) {
+				    	width: 100%;
+				    	margin-bottom: 20px;
+				    }
 				}
 				.content_right {
 				    width: calc(50% - 10px);
@@ -67,19 +99,32 @@
 					    font-size: 16px;
 					    margin-bottom: 10px;
 					    line-height: 22px;
+					    @include maxw(laptop) {
+						    font-size: 14px;
+	    					line-height: 20px;    	
+	    				}
 					}
+					@include maxw(table_min) {
+				    	width: 100%;
+				    }
 				}
 			}
 		}
 		.right {
 		    width: calc(30% - 20px);
 		    flex: none;
+		    @include maxw(notlaptop) {
+		    	width: 100%;
+		    }
 		    .experiencia {
 			    padding: 25px 0px;
 			    h3 {
 				    color: $azul;
 				    font-size: 30px;
 				    margin-bottom: 10px;
+				    @include maxw(laptop) {
+					    font-size: 20px;  	
+    				}
 				    &:after {
 				    	content: '.';
 					    color: $orange;
@@ -92,6 +137,9 @@
 				    @include maxw(mypc) {
 						font-size: 18px;
 					}
+					@include maxw(laptop) {
+					    font-size: 16px;   	
+    				}
 				}
 			}
 		}
@@ -103,6 +151,11 @@
 	    margin-bottom: 40px;
 	    background: #3374ac;
 	    padding-right: 0px;
+	    @include maxw(tablet_p) {
+	    	padding-top: 20px;
+	    	padding-bottom: 20px;
+	    	padding-left: 10px;
+	    }
 	    .flex {
 	    	margin: 40px 0px;
 		    margin-right: 300px;
@@ -120,6 +173,10 @@
 			@include maxw(laptop) {
 				margin-right: 100px;
 			}
+			@include maxw(tablet_p) {
+		    	margin-right: 20px;
+		    	display: block;
+		    }
 		    &:before {
 		    	content: '';
 			    left: 50%;
@@ -128,6 +185,9 @@
 			    width: 2px;
 			    background: white;
 			    opacity: 0.3;
+			    @include maxw(tablet_p) {
+			    	display: none;
+			    }
 		    }
 		    h4 {
 			    font-size: 20px;
@@ -158,10 +218,16 @@
 			    img {
 			    	width: 100%;
 			    }
+			    @include maxw(tablet_p) {
+			    	display: none;
+			    }
 			}
 			.right {
 			    width: calc(50% - 40px);
 			    flex: none;
+			    @include maxw(tablet_p) {
+			    	width: 100%;
+			    }
 			}
 		}
 	}
@@ -169,6 +235,10 @@
 .valores {
     margin-top: 120px;
     margin-bottom: 100px;
+    @include maxw(table_min) {
+    	margin-top: 40px;
+    	margin-bottom: 40px;
+    }
     .box {
 	    padding-right: 0px;
 	}
@@ -185,9 +255,16 @@
 		@include maxw(laptop) {
 			margin-right: 100px;
 		}
+		@include maxw(tablet_p) {
+			margin-right: 20px;
+			display: block;
+		}
 	    .left {
 		    width: 500px;
     		flex: none;
+    		@include maxw(tablet_p) {
+				width: 100%;
+			}
     		p {
 				line-height: 28px;
 			    font-size: 18px;
@@ -198,12 +275,21 @@
 		    width: 450px;
 		    flex: none;
 		    position: relative;
+		    @include maxw(tablet_p) {
+				width: 100%;
+				max-width: 450px;
+			}
 		}
 	}
 	.valores_c {
 	    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 	    position: absolute;
 	    top: -200px;
+	    @include maxw(tablet_p) {
+			width: 100%;
+			top: 0px;
+			position: relative;
+		}
 	    .img {
 	    	img {
 			    width: 100%;
@@ -262,10 +348,18 @@
 			    text-align: center;
 			    justify-content: center;
 			    position: relative;
+			    @include maxw(tablet_p) {
+			    	width: calc(50% - 20px);
+			    }
+			    @include maxw(table_min) {
+			    	width: 100%;
+			    	margin-right: 0px;
+			    }
 			    img {
 				    width: auto;
 				    max-height: 70px;
 				    filter: grayscale(1);
+				    max-width: 100%;
 				}
 				span {
 				    position: absolute;

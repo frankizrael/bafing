@@ -4,8 +4,9 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 600px;
+    height: 100vh;
     position: relative;
+    min-height: 600px;
     &:before {
 	    content: '';
 	    position: absolute;
@@ -17,21 +18,37 @@
 	}
 	.titlePrincipal {
 	    display: block;
-	    position: relative;
-	    top: 190px;
-	    h1 {
+		position: relative;
+		top: calc(50% - 125px);
+		@include maxw(tablet_p) {
+			top: 50%;
+    		transform: translateY(-50%);
+		}
+		h1 {
 		    color: white;
 		    font-size: 60px;
+		    @include maxw(tablet_p) { 
+		    	font-size: 30px;
+		    }
 		}
 		p {
 		    font-size: 20px;
 		    color: white;
 		    max-width: 600px;
+		    @include maxw(tablet_p) { 
+		    	font-size: 14px;
+		    }
 		}
 	}
 	.tt {
 	    position: relative;
 	    padding-left: 125px;
+	    @include maxw(tablet_p) {
+	    	padding-left: 95px;
+		}
+		@include maxw(table_min) {
+	    	padding-left: 0px;
+		}
 	    img {
 		    position: absolute;
 		    width: 100px;
@@ -39,16 +56,24 @@
 		    left: 0px;
 		    top: 50%;
 		    margin-top: -42px;
+		    @include maxw(tablet_p) {
+				width: 80px;
+		    	height: 80px;
+		    	margin-top: -38px;
+			}
+			@include maxw(table_min) {
+		    	display: none;
+			}
 		}
 	}
 }
 .menu-container {
-    max-width: calc(100% - 550px);
-    margin-left: 550px;
+    max-width: calc(100% - 520px);
+    margin-left: 520px;
     padding-right: 300px;
     @include maxw(mypc) {
-		max-width: calc(100% - 550px);
-	    margin-left: 550px;
+		max-width: calc(100% - 450px);
+	    margin-left: 450px;
 	    padding-right: 150px;
 	}
 	@include maxw(mylaptop) {
@@ -61,13 +86,23 @@
 	    margin-left: 350px;
 	    padding-right: 100px;
 	}
+	@include maxw(tablet_p) {
+		max-width: calc(100% - 100px);
+		margin-left: 50px;
+		padding-right: 50px;
+	}
+	@include maxw(table_max) {
+		max-width: calc(100% - 40px);
+		margin-left: 20px;
+		padding-right: 20px;
+	}
 }
 .menu-container-full {
-	max-width: calc(100% - 550px);
-    margin-left: 550px;
+	max-width: calc(100% - 520px);
+    margin-left: 520px;
     @include maxw(mypc) {
-		max-width: calc(100% - 550px);
-	    margin-left: 550px;
+		max-width: calc(100% - 450px);
+	    margin-left: 450px;
 	}
 	@include maxw(mylaptop) {
 		max-width: calc(100% - 450px);
@@ -76,6 +111,10 @@
 	@include maxw(laptop) {
 		max-width: calc(100% - 350px);
 	    margin-left: 350px;
+	}
+	@include maxw(tablet_p) {
+		max-width: 100%;
+	    margin-left: 0px;
 	}
     .right-container {
     	padding-right: 300px;
@@ -87,13 +126,19 @@
 		}
 		@include maxw(laptop) {
 		    padding-right: 100px;
-		}  	
+		} 
+		@include maxw(tablet_p) {
+			padding-right: 100px;
+		}
+		@include maxw(table_max) {
+			padding-right: 20px;
+		} 	
     }
 }
 .fixedMenu {
     position: fixed;
-    top: 350px;
-    z-index: 15;
+    top: calc(50% + 80px);
+    z-index: 4;
     a {
 	    display: block;
 	    color: white;
@@ -245,7 +290,6 @@
 		    }
 	    }
 	}
-
 	&.link_6 {
 		li {
 			&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
@@ -282,21 +326,29 @@
 			color: #3374ac;
 		}
 	}
+	@include maxw(tablet_p) { display: none; }
 }
 #acerca {
 	position: relative;
 	z-index: 2;
 	.box {
 		background: white;
-		top: -50px;
-		position: relative;
+	    margin-top: 50px;
+	    position: relative;
 		.flex {
 		    display: flex;
 		    justify-content: space-between;
 		    align-items: center;
+		    @include maxw(table_min) {
+		    	display: block;
+		    }
 		    .left {
 			    width: calc(50% - 20px);
 			    flex: none;
+			    @include maxw(table_min) {
+			    	width: 100%;
+			    	margin-bottom: 20px;
+			    }
 			    .contenido_left {
 				    flex: none;
 				    border-top: solid 2px $orange;
@@ -305,13 +357,23 @@
 				    color: $azul;
 				    font-size: 21px;
 					line-height: 30px;
+					@include maxw(table_min) {
+					    font-size: 18px;
+						line-height: 20px;
+				    }
 				}
 			}
 			.right {
 			    width: calc(50% - 20px);
 			    flex: none;
+			    @include maxw(table_min) {
+			    	width: 100%;
+			    }
 			    .content_right {
 				    padding: 25px 0px;
+				    @include maxw(table_min) {
+				    	padding: 15px 0px;
+				    }
 					p {
 					    font-size: 16px;
 					    line-height: 24px;
@@ -331,6 +393,9 @@
 		    color: $azul;
 		    padding: 10px 0px;
 		    flex-wrap: wrap;
+		    @include maxw(table_min) {
+		    	display: block;
+		    }
 		    .center {
 			    font-size: 14px;
 			    margin-bottom: 25px;
@@ -346,6 +411,10 @@
 				    padding: 25px 0px;
 				    font-size: 20px;
 				    line-height: 26px;
+				    @include maxw(table_min) {
+				    	font-size: 18px;
+				    	line-height: 22px;
+				    }
 				}
 		    }
 		    .right {
@@ -378,6 +447,10 @@
 						    padding-top: 10px;
 						    .left, .right {
 						    	width: calc(50% - 10px);
+						    	@include maxw(table_min) {
+							 		width: 100%;
+							 		margin-bottom: 0px;
+							    }
 						    }
 						    h3 {
 							    font-size: 16px;
@@ -401,9 +474,16 @@
 }
 #experiencia {
 	margin: 80px 0px;
+	@include maxw(table_min) {
+ 		margin: 30px 0px;
+    }
 	.menu-container-full {
 		background: $azul;
     	padding: 40px 50px;
+    	padding-right: 0px;
+    	@include maxw(table_min) {
+	 		padding: 20px 30px;
+	    }
     	h2 {
 		    color: white;
 		}
@@ -441,31 +521,65 @@
 					}
 				}
 			}
-			.swiper-slide {
-				width: 33.33%;
-				@include maxw(mylaptop) {
-					width: 50%;
+			.swiper-wrapper {
+				height: 220px;
+				@include maxw(table_min) {
+				 	height: 290px;
 				}
 			}
+			.swiper-slide {
+			    padding: 10px 0px;
+			    box-sizing: border-box;
+			}
 			.swiper-pagination {
-			    position: relative;
+			    transform: translateY(-50%) !important;
+			    margin-top: 0px;
+			    bottom: auto !important;
 			}
 			.list_a {
 			    padding: 20px 20px;
 			    border: solid 1px white;
-			    margin: 10px 0px;
 			    box-sizing: border-box;
-			    margin-right: 15px;
-			    min-height: 200px;
-			    .tt {
-				    font-size: 16px;
-				    font-weight: 700;
-				    text-transform: uppercase;
-				    position: absolute;
-				    background: $azul;
-				    padding: 5px;
-				    left: 15px;
-				    top: -5px;
+			    height: 200px;
+			    width: calc(100% - 50px);
+			    @include maxw(table_min) {
+			 		height: auto;
+			 		width: calc(100% - 30px);
+			    }
+			    &__flex {
+		    		display: flex;
+				    align-items: center;
+				    justify-content: space-between;
+				}
+				&__cli {
+				    width: 70%;
+				    flex: none;
+				    @include maxw(table_min) {
+				 		width: 100%;
+				    }
+				    .tt {
+					    font-size: 25px;
+					    margin-bottom: 20px;
+					    position: relative;
+					    font-weight: 700;
+					    color: #f7d52e;
+					    @include maxw(table_min) {
+					 		font-size: 18px;
+					    	margin-bottom: 10px;
+					    }
+					}
+				}
+				&__img {
+				    width: calc(30% - 20px);
+				    flex: none;
+				    img {
+					    width: 100%;
+					    height: 160px;
+					    object-fit: cover;
+					}
+					@include maxw(table_min) {
+				 		display: none;
+				    }
 				}
 			}
 		}
@@ -498,6 +612,38 @@
 			}
 		}
 	}
+	.imgCore {
+	    border: solid 1px #e6e6e6cf;
+	    height: 150px;
+	    display: flex;
+	    align-items: center;
+	    padding: 10px;
+	    box-sizing: border-box;
+	    margin-bottom: 10px;
+	    margin-right: 10px;
+	    background: white;
+	    img {
+			width: 100%;
+		    filter: grayscale(1);
+		    transition: 0.3s;
+		    height: 100%;
+		    object-fit: contain;
+		}
+		&:hover {
+			img {
+				filter: grayscale(0);
+			}
+		}
+	}
+	.swiper-slide {
+		width: 25%;
+		@include maxw(table_min) {
+	 		width: 50%;
+	    }
+	}
+	.swiper-pagination {
+	    position: relative;
+	}
 }
 .partners {
 	margin-bottom: 80px;
@@ -513,6 +659,9 @@
 		    .contentf {
 			    display: flex;
 			    align-items: center;
+			    @include maxw(tablet_p) {
+			    	display: block;
+			    }
 			    .left {
 				    width: 200px;
 				    flex: none;
@@ -520,6 +669,9 @@
 				    display: flex;
 				    font-weight: 700;
 				    color: #3374ac;
+				    @include maxw(tablet_p) {
+				    	font-size: 18px;
+				    }
 				    &:after {
 				    	content: '.';
 				    	color: $orange;
@@ -527,6 +679,7 @@
 				}
 				.right {
 				    display: flex;
+				    flex-wrap: wrap;
 				    img {
 					    width: 250px;
 					    border: solid 1px #dedede;
@@ -534,6 +687,8 @@
 					    display: block;
 					    margin-right: 15px;
 					    filter: grayscale(1);
+					    margin-bottom: 20px;
+					    object-fit: contain;
 					}
 				}
 			}
@@ -551,6 +706,9 @@
 	    display: flex;
 	    align-items: center;
 	    justify-content: space-between;
+	    @include maxw(tablet_p) {
+	    	display: block;
+	    }
 	    .blogsContentItem {
 			width: calc(33.33% - 20px);
 		    position: relative;
@@ -562,6 +720,10 @@
 		    @include maxw(mypc) {
 				height: 350px;
 			}
+			@include maxw(tablet_p) {
+		    	width: 100%;
+		    	margin-bottom: 20px;
+		    }
 		    &:before {
 			    content: '';
 			    position: absolute;
