@@ -27,7 +27,9 @@ var mySwiperInit = new Swiper('#testimonios_slider .swiper-container', {
         clickable: true
     },
     loop: true,
-    autoplay: 2500,
+    autoplay: {
+        delay: 4500
+    },
     slidesPerView: 'auto'
 });
 
@@ -40,6 +42,34 @@ var mySwiperInit = new Swiper('.init .swiper-container', {
         clickable: true
     },
     loop: true,
-    autoplay: 2500,
+    autoplay: {
+        delay: 4500
+    },
     slidesPerView: 1
 });
+
+
+var mySwiperInit = new Swiper('.clientes .swiper-container', {
+    speed: 400,
+    pagination: {
+        el: '.init .swiper-pagination',
+        clickable: true
+    },
+    loop: true,
+    autoplay: {
+        delay: 4500
+    },
+    slidesPerView: 5,
+    breakpoints: {
+        1600: {
+            slidesPerView: 5
+        },
+        800: {
+            slidesPerView: 3
+        },
+        0: {
+            slidesPerView: 1
+        }
+    }
+});
+

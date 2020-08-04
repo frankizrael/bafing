@@ -8,7 +8,7 @@ get_header(); ?>
 <section class="init banner flex align-items-center" style="background-image: url(<?php echo get_the_post_thumbnail_url($blog_id); ?>);">
 	<div class="x-container titlePrincipal">
 		<div class="title title--white">
-			<h1>Multimedia</h1>
+			<h1>Experiencias</h1>
 		</div>	
 	</div>
 </section>
@@ -21,21 +21,6 @@ get_header(); ?>
 					<div class="ss">
 						<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
 					</div>
-					<ul class="list_etiq">
-						<li><a href="<?php echo site_url(); ?>/multimedia" class="active">Todos</a></li>
-					    <?php 
-							$term = get_terms('post_tag');    
-							foreach ($term as $te) {
-								?>
-						<li>
-							<a href="javascript:void(0)" class="jsEtiq" data=".cls_<?php echo $te->slug; ?>">
-								<?php echo $te->name; ?>
-							</a>
-						</li>
-								<?php
-							}
-					    ?> 
-					</ul>
 				</div>				
 			</div>
 			<div class="noticias posRelative">
@@ -50,10 +35,8 @@ get_header(); ?>
 										while ( have_posts() ) :
 											the_post();
 											if (get_field('destacado',get_the_ID())){
-												$termss = get_the_terms(get_the_ID(),'post_tag');
-												$slug = $termss[0]->slug;
 											?>
-												<div class="noticias__item posRelative destacado cls_<?php echo $slug; ?>" id="noticia_<?php echo get_the_ID(); ?>">
+												<div class="noticias__item posRelative destacado" id="noticia_<?php echo get_the_ID(); ?>">
 													<div class="noticias__item__img posRelative">
 														<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
 														<span class="noticias__item__date flex align-items-center posAbsolute">
@@ -135,10 +118,8 @@ get_header(); ?>
 										while ( have_posts() ) :
 											the_post();
 											if (!get_field('destacado',get_the_ID())){
-												$termss = get_the_terms(get_the_ID(),'post_tag');
-												$slug = $termss[0]->slug;
 											?>
-												<div class="noticias__item posRelative cls_<?php echo $slug; ?>" id="noticia_<?php echo get_the_ID(); ?>">
+												<div class="noticias__item posRelative" id="noticia_<?php echo get_the_ID(); ?>">
 													<div class="noticias__item__img posRelative">
 														<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
 														<span class="noticias__item__date flex align-items-center posAbsolute">

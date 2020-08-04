@@ -31,8 +31,10 @@ get_header();
 				<div class="ff_template__item">
 					<a href="#sec_<?php echo $ss['id'];?>" style="background-image: url('<?php the_field('background_init',$ss['id']); ?>');">
 						<div class="title_a">
-							<img src="<?php the_field('icon',$ss['id']); ?>">
-							<span><?php echo get_the_title($ss['id']);?></span>
+							<div class="conten">
+								<img src="<?php the_field('icon',$ss['id']); ?>">
+								<span><?php echo get_the_title($ss['id']);?></span>
+							</div>
 						</div>
 					</a>
 				</div>

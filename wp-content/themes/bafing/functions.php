@@ -152,3 +152,40 @@ function cptui_register_my_cpts_multimedia() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts_multimedia' );
+
+function cptui_register_my_cpts_experiencia() {
+
+  /**
+   * Post Type: experiencia.
+   */
+
+  $labels = array(
+    "name"          => __( "experiencia", "custom-post-type-ui" ),
+    "singular_name" => __( "experiencia", "custom-post-type-ui" ),
+  );
+
+	$args = array(
+	    'label'               => __( 'Experiencias', 'custom-post-type-ui' ),
+	    'description'         => __( 'Experiencias files', 'custom-post-type-ui' ),
+	    'labels'              => $labels,
+	    'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+	    'hierarchical'        => true,
+	    'public'              => true,
+	    'show_ui'             => true,
+	    'show_in_menu'        => true,
+	    'show_in_nav_menus'   => true,
+	    'show_in_admin_bar'   => true,
+	    'menu_position'       => 5,
+	    'can_export'          => true,
+	    'has_archive'         => true,
+	    'exclude_from_search' => false,
+	    'publicly_queryable'  => true,
+	    'capability_type'     => 'page',
+	     
+	    // This is where we add taxonomies to our CPT
+	    'taxonomies'          => array( 'exp_tag' ),
+	);
+  register_post_type( "experiencia", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_experiencia' );

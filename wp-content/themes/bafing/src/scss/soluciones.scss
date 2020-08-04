@@ -465,6 +465,21 @@
 								    margin-right: 5px;
 								}
 							}
+							p {
+								color: $black;								
+							    line-height: 20px;
+							    font-size: 14px;
+							}
+							a {
+								color: #3374ac;
+							    margin: 10px 2px;
+							    display: inline-block;
+							    background: #f7d52e;
+							    padding: 10px 25px;
+							    font-size: 16px;
+							    border-radius: 6px;
+							    font-weight: 700;
+							}
 						}
 			    	}
 			    }

@@ -103,7 +103,7 @@ get_header();
 <section class="reconocimientos">
 	<div class="x-container">
 		<div class="box">
-			<div class="premios">
+			<div class="premios" style="display: none;">
 				<div class="title">
 					<h2>Certificaciones</h2>
 				</div>
@@ -123,7 +123,7 @@ get_header();
 					</ul>
 				</div>
 			</div>
-			<div class="certificaciones">
+			<div class="partners">
 				<div class="title">
 					<h2>Premios</h2>
 				</div>
@@ -143,7 +143,7 @@ get_header();
 					</ul>
 				</div>
 			</div>
-			<div class="partners">
+			<div class="certificaciones" style="display: none;">
 				<div class="title">
 					<h2>Partners</h2>
 				</div>
