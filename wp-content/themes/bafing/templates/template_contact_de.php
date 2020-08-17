@@ -53,7 +53,7 @@ $color_button = get_field('color_button');
 						<h3><?php the_field('title'); ?></h3>
 					</div>
 					<div class="boxBorder__content">
-						<div class="form">
+						<div class="form formTable">
 							<?php the_field('form'); ?>
 						</div>
 					</div>
@@ -62,28 +62,9 @@ $color_button = get_field('color_button');
 		</div>
 	</div>
 </section>
-<div id="map_canvas"></div>
 <?php
 get_footer();
 ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIUoPmAtFVeqmsT2hd0pV3usTNAbRQ-a8&sensor=false&libraries=geometry,places,drawing&ext=.js" type="text/javascript"></script>
-<script type="text/javascript">
-	window.onload = function(){
-	    var options = {
-	        zoom: 17,
-	        // center: new google.maps.LatLng(-12.103248051911464, -77.01072606859202)
-	        center: new google.maps.LatLng(<?php the_field('lat');?>, <?php the_field('log');?>)
-	    };
-	    var map = new google.maps.Map(document.getElementById('map_canvas'), options);
-	    new google.maps.Marker({
-	        position: map.getCenter()
-	        , map: map
-	        , title: 'Bafing'
-	        , icon: '<?php echo site_url(); ?>/wp-content/themes/bafing/pin.png'
-	        , cursor: 'default'
-	        , draggable: true
-	    });
-	};
-</script>
+
 
 

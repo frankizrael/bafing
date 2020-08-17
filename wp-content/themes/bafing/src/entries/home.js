@@ -52,7 +52,7 @@ var mySwiperInit = new Swiper('.init .swiper-container', {
 var mySwiperInit = new Swiper('.clientes .swiper-container', {
     speed: 400,
     pagination: {
-        el: '.init .swiper-pagination',
+        el: '.clientes .swiper-pagination',
         clickable: true
     },
     loop: true,

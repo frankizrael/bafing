@@ -89,6 +89,9 @@ input {outline:none;}
 			    height: 20px;
 			    display: block;
 			}
+			&.prev svg {
+			    transform: rotate(180deg)translateX(0px)translateY(-5px);
+			}
 		}
 	}
 }

@@ -221,6 +221,34 @@ ul.list_etiq {
 				    transform: rotate(45deg);
 				    left: 45px;
 			    }
+			    .closevideo:after {
+				    content: '';
+				    position: absolute;
+				    width: 12px;
+				    height: 2px;
+				    background: white;
+				    transform: rotate(-45deg);
+				    top: 6px;
+				    left: 1px;
+				}
+				.closevideo:before {
+				    content: '';
+				    position: absolute;
+				    width: 12px;
+				    height: 2px;
+				    background: white;
+				    transform: rotate(45deg);
+				    top: 6px;
+				    left: 1px;
+				}
+				.closevideo {
+				    position: absolute;
+				    width: 15px;
+				    height: 15px;
+				    cursor: pointer;
+				    top: 5px;
+				    right: 5px;
+				}
 			    .form {	
 				    .inputCrow {
 					    width: 100%;
@@ -323,6 +351,41 @@ ul.list_etiq {
 		    			height: 200px;
     					object-fit: cover;
 		    		}
+
+					.social {
+					    position: absolute;
+					    bottom: 10px;
+					    display: flex;
+					    align-items: center;
+					    right: 0px;
+					    &:before {
+						    content: 'Compartir: ';
+						    color: white;
+						    margin-right: 10px;
+						}
+						a {
+							svg {
+							    width: 30px;
+							    height: 30px;
+							    display: block;
+							    path {
+								    fill: white;
+								}
+							}
+							&#whatsapp {
+								width: 30px;
+							    text-align: center;
+							    display: flex;
+							    justify-content: center;
+							    align-items: center;
+							    svg {
+								    width: 17px;
+								    height: 18px;
+								    margin: auto;
+								}
+							}
+						}
+					}
 		    	}
 		    	&__date {
 		    		position: absolute;
@@ -360,9 +423,16 @@ ul.list_etiq {
 					}
 					&.experiencia_content {
 						.resumenContent {
-						    margin-bottom: 20px;
+						    font-size: 14px;
+						    line-height: 20px;
+						    .content-r {
+						    	min-height: 260px;
+							}
 						    .autors {
-							    margin-top: 10px;
+							    margin-top: 30px;
+							    strong {
+								    color: #3374ac;
+								}
 							}
 						}
 						.title {
@@ -370,12 +440,14 @@ ul.list_etiq {
 						    flex-wrap: wrap;
 						    align-items: center;
 						    justify-content: space-between;
+						    margin-bottom: 15px;
 						 	h3 {
-							    width: calc(100% - 150px);
-							    font-size: 20px;
+							    width: calc(100% - 100px);
+							    font-size: 18px;
+							    line-height: 22px;
 							}
 							img {
-							    width: 120px;
+							    width: 80px;
 							}
 						}
 					}

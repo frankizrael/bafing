@@ -38,6 +38,23 @@ footer {
     		.right {
     			form {
 				    display: flex;
+				    flex-wrap: wrap;
+    				max-width: 465px;
+    				span.wpcf7-not-valid-tip {
+					    font-size: 10px;
+					    text-transform: uppercase;
+					    color: #fb9595;
+					    max-width: 300px;
+					}
+				    .wpcf7-response-output {
+					    width: 100%;
+					    flex: none;
+					    box-sizing: border-box;
+					    color: white;
+					    margin-bottom: 0px;
+					    margin-left: 0px;
+					    margin-top: 5px;
+					}
 				    @include maxw(table_max) {
 				    	display: block;
 					    max-width: 320px;

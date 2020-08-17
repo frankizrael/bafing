@@ -406,6 +406,10 @@
 		img {
 			width: 100%;
     		filter: grayscale(1);
+    		transition: 0.3s;
+    		&:hover {
+    			filter: grayscale(0);
+    		}
 		}
 	}
 }
@@ -628,7 +632,7 @@
 			    border: solid 2px #f7d52e;
 			    &:before {
 			    	background: #f7d52e;
-    				opacity: 0.75;
+    				opacity: 0.85;
 			    }
 			    .title-top, .title-bot {
 				    color: #3374ac;
@@ -771,7 +775,7 @@
 	    background: white;
 	    @include maxw(mypc) {
 	    	width: 350px;
-	    	padding: 0px 0px;
+	    	padding: 15px 0px;
 	    }
 	    @include maxw(notlaptop) {
 	    	width: calc(50% - 20px);

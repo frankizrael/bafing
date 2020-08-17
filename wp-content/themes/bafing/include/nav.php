@@ -343,12 +343,9 @@
 
 						</i>
 					</a>
-					<a id="twitter" href="javascript: void(0);" onclick="window.open('http://twitter.com/home?status=<?php the_permalink(); ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="twitterSocial">
+					<a id="linkedin" href="javascript: void(0);" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&source=bafing.com','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="twitterSocial">
 						<i>
-							<svg id="icon_twitter" data-name="icon/twitter" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
-							  <rect id="caja" width="30" height="30" fill="none"/>
-							  <path id="icon" d="M43.542,16.194A10.118,10.118,0,0,0,53.75,5.986V5.5A7.9,7.9,0,0,0,55.5,3.653a8.071,8.071,0,0,1-2.042.583,3.783,3.783,0,0,0,1.556-1.944,8.918,8.918,0,0,1-2.236.875A3.472,3.472,0,0,0,50.153,2a3.653,3.653,0,0,0-3.6,3.6,1.9,1.9,0,0,0,.1.778,10.052,10.052,0,0,1-7.389-3.792,3.723,3.723,0,0,0-.486,1.847,3.863,3.863,0,0,0,1.556,3.014,3.278,3.278,0,0,1-1.653-.486h0a3.553,3.553,0,0,0,2.917,3.5,3,3,0,0,1-.972.1,1.654,1.654,0,0,1-.681-.1,3.683,3.683,0,0,0,3.4,2.528,7.34,7.34,0,0,1-4.472,1.556,2.692,2.692,0,0,1-.875-.1,9.177,9.177,0,0,0,5.542,1.75" transform="translate(-31.75 5.5)" fill="#2c2c2c" fill-rule="evenodd"/>
-							</svg>
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 382 382" style="enable-background:new 0 0 382 382;" xml:space="preserve"><path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889	C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0zM118.207,329.844c0,5.554-4.502,10.056-10.056,10.056H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806	c5.554,0,10.056,4.502,10.056,10.056V329.844zM86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73	c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426	c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472L341.91,330.654L341.91,330.654z"/><g></svg>
 						</i>
 					</a>
 					<a id="whatsapp" href="whatsapp://send?text=Gracias%20por%20compartir%20<?php the_title();?>%20para%20ingresar <?php the_permalink(); ?>" data-action="share/whatsapp/share" class="wspSocial">

@@ -147,6 +147,9 @@ get_header();
 		</div>
 	</div>
 </section>
+<?php
+	if (get_field('clientes')) {
+		?>
 <section class="clientes" id="clientes">
 	<div class="menu-container">
 		<div class="title">
@@ -174,6 +177,9 @@ get_header();
 		</div>
 	</div>
 </section>
+<?php
+	}
+?>
 <?php
 	if (get_field('partners')) {
 		?>	

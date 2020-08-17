@@ -13,3 +13,7 @@ $('ul.list_etiq li').on('click',function(){
 $('#eventoClick').on('click',function(){	
 	$('.video-form').addClass('active');
 });
+
+$('.closevideo').on('click',function(){	
+	$('.video-form').removeClass('active');
+});

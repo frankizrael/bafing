@@ -3,7 +3,7 @@ set_query_var('ENTRY', 'multimedia');
 $blog_id = get_option( 'page_for_posts' );
 get_header(); ?>
 <?php get_template_part('include/nav'); ?>
-<section class="init banner flex align-items-center" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
+<section class="init banner flex align-items-center" style="background-image: url(<?php echo get_field('imagen_header'); ?>);">
 	<div class="x-container titlePrincipal">
 		<div class="title title--white">
 			<h1><?php the_title();?></h1>
@@ -72,6 +72,7 @@ get_header(); ?>
 									<a href="javascript:void(0)" class="btn" id="eventoClick"><?php the_field('videomp4_text'); ?></a>
 									<a href="<?php the_field('videomp4'); ?>" id="download" style="display: none;" download >descargarfile</a>
 									<div class="video-form">
+										<div class="closevideo"></div>
 										<div id='crmWebToEntityForm'>
 										   <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
 										   <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads3710378000004933066 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory3710378000004933066()' accept-charset='UTF-8' class="form">

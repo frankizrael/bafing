@@ -43,16 +43,17 @@ get_header(); ?>
 										// Start the loop.
 										while ( have_posts() ) :
 											the_post();
-											if (get_field('destacado',get_the_ID())){
+											$myid = get_the_ID();
+											if (get_field('destacado',$myid)){
 											?>
-												<div class="noticias__item posRelative destacado" id="noticia_<?php echo get_the_ID(); ?>">
+												<div class="noticias__item posRelative destacado" id="noticia_<?php echo $myid; ?>">
 													<div class="noticias__item__img posRelative">
-														<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
+														<img src="<?php echo get_the_post_thumbnail_url($myid); ?>">
 														<span class="noticias__item__date flex align-items-center posAbsolute">
 															<svg id="tiempo" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 															  <path id="icon" d="M2.4,2.4A7.263,7.263,0,0,1,8,0a7.263,7.263,0,0,1,5.6,2.4A7.263,7.263,0,0,1,16,8a7.263,7.263,0,0,1-2.4,5.6A7.263,7.263,0,0,1,8,16a7.263,7.263,0,0,1-5.6-2.4A7.984,7.984,0,0,1,0,8,7.263,7.263,0,0,1,2.4,2.4Zm9.2,9.2.933-.933L9.2,7.333,8,2H6.667V8a1.21,1.21,0,0,0,.4.933.466.466,0,0,0,.267.133Z"/>
 															</svg>
-															<p><?php the_field('date',get_the_ID()); ?></p>
+															<p><?php the_field('date',$myid); ?></p>
 														</span>
 														<div class="desct">
 															<i>
@@ -82,7 +83,7 @@ get_header(); ?>
 															<p>Destacado</p>
 														</div>
 														<div class="social">
-															<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="facebookSocial">
+															<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo get_the_permalink($myid); ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="facebookSocial">
 																<i>
 																	<svg id="icon_facebook" data-name="icon/facebook" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
 																	  <rect id="caja" width="30" height="30" fill="none" opacity="0"/>
@@ -91,7 +92,7 @@ get_header(); ?>
 
 																</i>
 															</a>
-															<a id="twitter" href="javascript: void(0);" onclick="window.open('http://twitter.com/home?status=<?php the_permalink(); ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="twitterSocial">
+															<a id="twitter" href="javascript: void(0);" onclick="window.open('http://twitter.com/home?status=<?php echo get_the_permalink($myid); ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="twitterSocial">
 																<i>
 																	<svg id="icon_twitter" data-name="icon/twitter" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
 																	  <rect id="caja" width="30" height="30" fill="none"/>
@@ -99,7 +100,7 @@ get_header(); ?>
 																	</svg>
 																</i>
 															</a>
-															<a id="whatsapp" href="whatsapp://send?text=Gracias%20por%20compartir%20<?php the_title();?>%20para%20ingresar <?php the_permalink(); ?>" data-action="share/whatsapp/share" class="wspSocial">
+															<a id="whatsapp" href="whatsapp://send?text=Gracias%20por%20compartir%20<?php the_title();?>%20para%20ingresar <?php echo get_the_permalink($myid); ?>" data-action="share/whatsapp/share" class="wspSocial">
 																<i>
 																	<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 																		<path d="m439.277344 72.722656c-46.898438-46.898437-109.238282-72.722656-175.566406-72.722656-.003907 0-.019532 0-.023438 0-32.804688.00390625-64.773438 6.355469-95.011719 18.882812-30.242187 12.527344-57.335937 30.640626-80.535156 53.839844-46.894531 46.894532-72.71875 109.246094-72.71875 175.566406 0 39.550782 9.542969 78.855469 27.625 113.875l-41.734375 119.226563c-2.941406 8.410156-.859375 17.550781 5.445312 23.851563 4.410157 4.414062 10.214844 6.757812 16.183594 6.757812 2.558594 0 5.144532-.429688 7.667969-1.3125l119.226563-41.730469c35.019531 18.082031 74.324218 27.625 113.875 27.625 66.320312 0 128.667968-25.828125 175.566406-72.722656 46.894531-46.894531 72.722656-109.246094 72.722656-175.566406 0-66.324219-25.824219-128.675781-72.722656-175.570313zm-21.234375 329.902344c-41.222657 41.226562-96.035157 63.925781-154.332031 63.925781-35.664063 0-71.09375-8.820312-102.460938-25.515625-5.6875-3.023437-12.410156-3.542968-18.445312-1.429687l-108.320313 37.910156 37.914063-108.320313c2.113281-6.042968 1.589843-12.765624-1.433594-18.449218-16.691406-31.359375-25.515625-66.789063-25.515625-102.457032 0-58.296874 22.703125-113.109374 63.925781-154.332031 41.21875-41.21875 96.023438-63.921875 154.316406-63.929687h.019532c58.300781 0 113.109374 22.703125 154.332031 63.929687 41.226562 41.222657 63.929687 96.03125 63.929687 154.332031 0 58.300782-22.703125 113.113282-63.929687 154.335938zm0 0"/><path d="m355.984375 270.46875c-11.421875-11.421875-30.007813-11.421875-41.429687 0l-12.492188 12.492188c-31.019531-16.902344-56.121094-42.003907-73.027344-73.023438l12.492188-12.492188c11.425781-11.421874 11.425781-30.007812 0-41.429687l-33.664063-33.664063c-11.421875-11.421874-30.007812-11.421874-41.429687 0l-26.929688 26.929688c-15.425781 15.425781-16.195312 41.945312-2.167968 74.675781 12.179687 28.417969 34.46875 59.652344 62.761718 87.945313 28.292969 28.292968 59.527344 50.582031 87.945313 62.761718 15.550781 6.664063 29.695312 9.988282 41.917969 9.988282 13.503906 0 24.660156-4.058594 32.757812-12.15625l26.929688-26.933594v.003906c5.535156-5.535156 8.582031-12.890625 8.582031-20.714844 0-7.828124-3.046875-15.183593-8.582031-20.714843zm-14.5 80.792969c-4.402344 4.402343-17.941406 5.945312-41.609375-4.195313-24.992188-10.710937-52.886719-30.742187-78.542969-56.398437s-45.683593-53.546875-56.394531-78.539063c-10.144531-23.667968-8.601562-37.210937-4.199219-41.613281l26.414063-26.414063 32.625 32.628907-15.636719 15.640625c-7.070313 7.070312-8.777344 17.792968-4.242187 26.683594 20.558593 40.3125 52.734374 72.488281 93.046874 93.046874 8.894532 4.535157 19.617188 2.832032 26.6875-4.242187l15.636719-15.636719 32.628907 32.628906zm0 0"/>
@@ -111,17 +112,17 @@ get_header(); ?>
 													<div class="noticias__item__content">
 														<div class="tag">
 															<?php
-																$categories = get_the_terms( get_the_ID(), 'category' );
+																$categories = get_the_terms( $myid, 'category' );
 																foreach( $categories as $category ) {
 																    echo '<a href="'.$category->slug.'">'.$category->name.'</a>';
 																}
 															?>
 														</div>
 														<div class="title title--little title--nopoint">
-															<h3><?php echo get_the_title(get_the_ID()); ?></h3>
+															<h3><?php echo get_the_title($myid); ?></h3>
 														</div>
 														<div class="linkContent">
-															<a href="<?php echo get_permalink(get_the_ID());?>" class="link">Ver más</a>
+															<a href="<?php echo get_permalink($myid);?>" class="link">Ver más</a>
 														</div>
 													</div>
 												</div>
@@ -131,16 +132,16 @@ get_header(); ?>
 										// Start the loop.
 										while ( have_posts() ) :
 											the_post();
-											if (!get_field('destacado',get_the_ID())){
+											if (!get_field('destacado',$myid)){
 											?>
-												<div class="noticias__item posRelative" id="noticia_<?php echo get_the_ID(); ?>">
+												<div class="noticias__item posRelative" id="noticia_<?php echo $myid; ?>">
 													<div class="noticias__item__img posRelative">
-														<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
+														<img src="<?php echo get_the_post_thumbnail_url($myid); ?>">
 														<span class="noticias__item__date flex align-items-center posAbsolute">
 															<svg id="tiempo" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 															  <path id="icon" d="M2.4,2.4A7.263,7.263,0,0,1,8,0a7.263,7.263,0,0,1,5.6,2.4A7.263,7.263,0,0,1,16,8a7.263,7.263,0,0,1-2.4,5.6A7.263,7.263,0,0,1,8,16a7.263,7.263,0,0,1-5.6-2.4A7.984,7.984,0,0,1,0,8,7.263,7.263,0,0,1,2.4,2.4Zm9.2,9.2.933-.933L9.2,7.333,8,2H6.667V8a1.21,1.21,0,0,0,.4.933.466.466,0,0,0,.267.133Z"/>
 															</svg>
-															<p><?php the_field('date',get_the_ID()); ?></p>
+															<p><?php the_field('date',$myid); ?></p>
 														</span>
 														<div class="social">
 															<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="facebookSocial">
@@ -172,17 +173,17 @@ get_header(); ?>
 													<div class="noticias__item__content">
 														<div class="tag">
 															<?php
-																$categories = get_the_terms( get_the_ID(), 'category' );
+																$categories = get_the_terms( $myid, 'category' );
 																foreach( $categories as $category ) {
 																    echo '<a href="'.$category->slug.'">'.$category->name.'</a>';
 																}
 															?>
 														</div>
 														<div class="title title--little title--nopoint">
-															<h3><?php echo get_the_title(get_the_ID()); ?></h3>
+															<h3><?php echo get_the_title($myid); ?></h3>
 														</div>
 														<div class="linkContent">
-															<a href="<?php echo get_permalink(get_the_ID());?>" class="link">Ver más</a>
+															<a href="<?php echo get_permalink($myid);?>" class="link">Ver más</a>
 														</div>
 													</div>
 												</div>

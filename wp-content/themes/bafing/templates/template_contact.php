@@ -76,7 +76,7 @@ get_header();
 										<option value='Soporte&#x20;T&eacute;cnico'>Soporte T&eacute;cnico</option>
 									</select>
 								</div>
-								<div class="inputCrow">
+								<div class="inputCrow full">
 									<label for="empresa">Descripci&oacute;n</label><br>
 									<textarea name='Description' maxlength='32000' style='width:100%;'>&nbsp;</textarea>
 								</div>

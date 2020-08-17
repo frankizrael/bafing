@@ -186,6 +186,8 @@
 	.banner {
 		position: relative;
 		z-index: 1;
+		background-size: cover;
+    	background-position: center;
 		&:before {
 			content: '';
 			width: 100%;
@@ -460,8 +462,6 @@
 					    font-size: 22px;
 					    font-weight: 700;
 					    text-align: center;
-					    min-height: 72px;
-					    line-height: 28px;
 					    transition: 0.3s;
 					}					
 					img {
@@ -473,7 +473,7 @@
 					    transition: 0.3s;
 					}
 					.conten {
-
+						margin-top: 50px;
 					}
 				}
 				&:hover {

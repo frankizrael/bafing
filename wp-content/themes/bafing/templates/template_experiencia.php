@@ -59,6 +59,9 @@ get_header();
 									endif;
 								?>
 							</div>
+							<div class="pag-link">
+								<?php bafing_pagination(); ?>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -80,6 +80,17 @@
 	    		text-align: center;
 	    	}	    	
 	    }
+	    form {
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: space-between;
+		    .inputCrow {
+			    width: calc(50% - 10px);
+			    &.full {
+			    	width: 100%;
+			    }
+			}
+		}
 	}
 	.form .inputCrow {
 	    width: 100%;
@@ -96,6 +107,73 @@
 		}
 	}
 
+}
+.formTable {
+	display: block;
+	div {
+	    width: 100% !important;
+	}
+	br {
+	    display: none;
+	}
+	table {
+	    width: 100% !important;
+	    display: block !important;
+	    tbody {
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: space-between;
+		    align-items: flex-start;
+		}
+		tr {
+		    display: block;
+		    padding: 0px !important;
+		    box-sizing: border-box;
+		    &:first-child {
+			    width: 100%;
+			    margin-bottom: 10px !important;
+			}
+		}
+		td {
+		    display: block;
+		    font-size: 14px !important;
+		    font-weight: 700;
+		    color: #3374ac;
+		    font-family: 'nexa_light' !important;
+		    width: auto !important;
+		    margin-bottom: 0px !important;
+		    padding: 0px !important;
+		}
+		input, select {
+			font-family: 'nexa_light';
+		    border: solid 1px #3374ac;
+		    background: #f7f7f7;
+		    color: black;
+		    width: 100% !important;
+		    padding: 10px;
+		    box-sizing: border-box;
+		    border-radius: 5px;
+		    margin-bottom: 10px !important;
+		    width: 190px !important;
+		}
+		input[type=submit] {
+		    background: #3374ac;
+		    color: white !important;
+		    border: solid 1px #3374ac;
+		}
+		textarea {
+		    font-family: 'nexa_light';
+		    border: solid 1px #3374ac;
+		    background: #f7f7f7;
+		    color: black;
+		    width: 100% !important;
+		    padding: 10px;
+		    box-sizing: border-box;
+		    border-radius: 5px;
+		    margin-bottom: 10px !important;
+		    width: 400px !important;
+		}
+	}
 }
 #map_canvas {
 	height: 400px;

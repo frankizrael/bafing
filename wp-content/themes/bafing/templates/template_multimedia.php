@@ -21,12 +21,20 @@ get_header(); ?>
 					<div class="ss">
 						<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
 					</div>
-					<ul class="list_tags">
-						<li><a href="<?php echo site_url(); ?>/noticias" class="active">Todos</a></li>
-					    <?php wp_list_categories( array(
-					    	'title_li' => '',
-					        'orderby' => 'name'
-					    ) ); ?> 
+					<ul class="list_etiq">
+						<li><a href="<?php echo site_url(); ?>/multimedia" class="active">Todos</a></li>
+					    <?php 
+							$term = get_terms('post_tag');    
+							foreach ($term as $te) {
+								?>
+						<li>
+							<a href="javascript:void(0)" class="jsEtiq" data=".cls_<?php echo $te->slug; ?>">
+								<?php echo $te->name; ?>
+							</a>
+						</li>
+								<?php
+							}
+					    ?> 
 					</ul>
 				</div>				
 			</div>
@@ -36,14 +44,20 @@ get_header(); ?>
 						<div class="noticias__right__content">
 							<div class="noticias__right__content__swiper">
 								<?php
-									if ( have_posts() ) : ?>
+									$lastposts = get_posts( array(
+										'numberposts' => -1,
+										'post_type'   => 'multimedia'
+									) );
+									if ( $lastposts ) : ?>
 									<?php
 										// Start the loop.
-										while ( have_posts() ) :
-											the_post();
+										foreach ( $lastposts as $post ) :
+											setup_postdata( $post );
 											if (get_field('destacado',get_the_ID())){
+												$termss = get_the_terms(get_the_ID(),'post_tag');
+												$slug = $termss[0]->slug;
 											?>
-												<div class="noticias__item posRelative destacado" id="noticia_<?php echo get_the_ID(); ?>">
+											<div class="noticias__item posRelative destacado cls_<?php echo $slug; ?>" id="noticia_<?php echo get_the_ID(); ?>">
 													<div class="noticias__item__img posRelative">
 														<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
 														<span class="noticias__item__date flex align-items-center posAbsolute">
@@ -117,16 +131,24 @@ get_header(); ?>
 															<a href="<?php echo get_permalink(get_the_ID());?>" class="link">Ver más</a>
 														</div>
 													</div>
-												</div>
+											</div>
 											<?php
 											}
-										endwhile;
+										endforeach;
+        								wp_reset_postdata();
+									endif;
+								?>
+								<?php
+									if ( have_posts() ) : ?>
+									<?php
 										// Start the loop.
 										while ( have_posts() ) :
 											the_post();
-											if (!get_field('destacado',get_the_ID())){
+											/*if (!get_field('destacado',get_the_ID())){*/
+												$termss = get_the_terms(get_the_ID(),'post_tag');
+												$slug = $termss[0]->slug;
 											?>
-												<div class="noticias__item posRelative" id="noticia_<?php echo get_the_ID(); ?>">
+												<div class="noticias__item posRelative cls_<?php echo $slug; ?>" id="noticia_<?php echo get_the_ID(); ?>">
 													<div class="noticias__item__img posRelative">
 														<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>">
 														<span class="noticias__item__date flex align-items-center posAbsolute">
@@ -178,7 +200,7 @@ get_header(); ?>
 													</div>
 												</div>
 											<?php
-											}
+											/*}*/
 										endwhile;
 									endif;
 								?>
