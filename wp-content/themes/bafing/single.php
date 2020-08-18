@@ -3,7 +3,7 @@ set_query_var('ENTRY', 'index');
 $blog_id = get_option( 'page_for_posts' );
 get_header(); ?>
 <?php get_template_part('include/nav'); ?>
-<section class="init banner flex align-items-center" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
+<section class="init banner flex align-items-center" style="background-image: url(<?php echo get_field('background_header'); ?>);">
 	<div class="x-container titlePrincipal">
 		<div class="title title--white">
 			<h1><?php the_title();?></h1>

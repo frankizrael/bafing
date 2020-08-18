@@ -46,6 +46,9 @@ $color_button = get_field('color_button');
 						endif;
 					?>
 				</div>
+				<div class="donwloada">
+					<a href="<?php the_field('download_file'); ?>" class="btn" download><?php the_field('download_text'); ?></a>
+				</div>
 			</div>
 			<div class="right">
 				<div class="boxBorder box">
