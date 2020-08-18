@@ -381,9 +381,18 @@ header {
     			}
     		}
     	}
+    	form {
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: space-between;
+		    max-width: 310px;
+		}
     	.form .inputCrow {
-		    width: 100%;
+		    width: calc(50% - 10px);
 		    margin-bottom: 20px;
+		    label {
+		    	font-size: 12px;
+		    }
 		    textarea {
 			    font-family: 'nexa_light';
 			    border: solid 1px #3374ac;
@@ -392,7 +401,7 @@ header {
 			    box-sizing: border-box;
 			    border-radius: 5px;
 			    resize: none;
-			    height: 80px;
+			    height: 95px;
 			}
 		}
     }

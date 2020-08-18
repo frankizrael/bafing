@@ -139,6 +139,7 @@
     position: fixed;
     top: calc(50% - 50px);
     z-index: 4;
+    opacity: 0;
     a {
 	    display: block;
 	    color: white;
@@ -322,6 +323,7 @@
 	    }
 	}
 	&.action {
+		opacity: 1;
 		a {
 			color: #3374ac;
 		}
@@ -696,7 +698,7 @@
 				    display: flex;
 				    flex-wrap: wrap;
 				    img {
-					    width: 250px;
+					    width: 150px;
 					    border: solid 1px #dedede;
 					    padding: 20px;
 					    display: block;

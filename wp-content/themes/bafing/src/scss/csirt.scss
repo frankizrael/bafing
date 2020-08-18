@@ -118,6 +118,10 @@
 		    }
 		    .experiencia {
 			    padding: 25px 0px;
+			    padding-left: 30px;
+			    @include maxw(table_min) { 
+			    	padding-left: 0px;
+			    }
 			    h3 {
 				    color: $azul;
 				    font-size: 20px;
