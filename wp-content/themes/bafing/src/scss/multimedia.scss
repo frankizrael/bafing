@@ -42,7 +42,6 @@
 		    right: 0px;
 		    &:before {
 			    content: 'Compartir: ';
-			    color: white;
 			    margin-right: 10px;
 			}
 			a {
@@ -50,9 +49,6 @@
 				    width: 30px;
 				    height: 30px;
 				    display: block;
-				    path {
-					    fill: white;
-					}
 				}
 				&#whatsapp {
 					width: 30px;

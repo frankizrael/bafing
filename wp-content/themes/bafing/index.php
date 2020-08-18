@@ -132,6 +132,7 @@ get_header(); ?>
 										// Start the loop.
 										while ( have_posts() ) :
 											the_post();
+											$myid = get_the_ID();
 											if (!get_field('destacado',$myid)){
 											?>
 												<div class="noticias__item posRelative" id="noticia_<?php echo $myid; ?>">

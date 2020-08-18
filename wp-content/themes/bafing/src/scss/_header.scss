@@ -89,7 +89,7 @@ header {
 						    color: $azul;
 						    margin-left: 0px;
 						    border: none !important;
-						    padding: 10px 0px;
+						    padding: 5px 0px;
 						    text-align: center;
 						}
 					}
@@ -120,7 +120,22 @@ header {
 							    &:last-child { a { border:none; } }
 							}
 							@include maxw(table_max) {
-							    display: none;
+							    display: block;
+							    position: relative;
+							    opacity: 1;
+							    padding-top: 0px !important;
+								pointer-events: all;
+								li {
+								    background: transparent;
+								    a {
+									    color: #3374ac !important;
+									    font-size: 14px;
+									    font-weight: 400 !important;
+									    font-family: 'nexa_light';
+									    line-height: 16px;
+									    padding: 6px 0px;
+									}
+								}
 							}
 						}					
 						&:hover {
